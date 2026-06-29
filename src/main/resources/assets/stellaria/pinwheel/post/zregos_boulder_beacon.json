@@ -1,0 +1,9 @@
+{
+  "stages": [
+    {
+      "type": "veil:blit",
+      "shader": "stellaria:zregos_boulder_beacon",
+      "in": "minecraft:main"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"zregos_boulders_chains.destroy": {
+			"animation_length": 2,
+			"bones": {
+				"core": {
+					"position": {
+						"1.75": {
+							"vector": [0, 0, 0]
+						},
+						"2.0": {
+							"vector": [0, -481, 0],
+							"easing": "easeOutBack"
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [1, 1, 1],
+							"easing": "easeOutBack",
+							"easingArgs": [3]
+						}
+					}
+				},
+				"chain": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 0, 1]
+						},
+						"1.3333": {
+							"vector": [1, 1, 1],
+							"easing": "easeOutCirc"
+						},
+						"1.75": {
+							"vector": [1, 1, 1],
+							"easing": "easeOutCirc"
+						},
+						"2.0": {
+							"vector": [1, 0, 1],
+							"easing": "easeOutBack"
+						}
+					}
+				}
+			}
+		}
+	}
+}

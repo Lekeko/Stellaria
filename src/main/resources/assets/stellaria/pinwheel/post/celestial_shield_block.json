@@ -1,0 +1,9 @@
+{
+  "stages": [
+    {
+      "type": "veil:blit",
+      "shader": "stellaria:celestial_shield_block",
+      "in": "minecraft:main"
+    }
+  ]
+}

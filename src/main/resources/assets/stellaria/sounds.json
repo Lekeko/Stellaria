@@ -1,0 +1,33 @@
+
+{
+  "zregos_laser": {
+    "sounds": [
+      "stellaria:zregos_laser"
+    ]
+  },
+  "zregos_laser_beam": {
+  "sounds": [
+    "stellaria:zregos_laser_beam"
+    ]
+  },
+  "zregos_shatter": {
+    "sounds": [
+      "stellaria:zregos_shatter"
+    ]
+  },
+  "zregos_boulders_summon": {
+    "sounds": [
+      "stellaria:zregos_boulders_summon"
+    ]
+  },
+  "zregos_boulders_break": {
+    "sounds": [
+      "stellaria:zregos_boulders_break"
+    ]
+  },
+  "cosmic_arrow_shot": {
+    "sounds": [
+      "stellaria:cosmic_arrow_shot"
+    ]
+  }
+}

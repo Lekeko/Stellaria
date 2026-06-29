@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "stellaria:item/serpents_blade_inv"
+  },
+  "gui_light": "front"
+}

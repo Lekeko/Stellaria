@@ -1,0 +1,101 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "gui_light": "front",
+  "texture_size": [
+    64,
+    64
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        49.5,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        1.75,
+        -1.75
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        49.5,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        1.75,
+        -1.75
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        -27.5,
+        0,
+        0
+      ],
+      "translation": [
+        -1.5,
+        2.5,
+        6
+      ],
+      "scale": [
+        0.2,
+        0.2,
+        0.2
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -27.5,
+        0,
+        0
+      ],
+      "translation": [
+        -1.5,
+        2.5,
+        6
+      ],
+      "scale": [
+        0.2,
+        0.2,
+        0.2
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        7.75,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "gui": {
+      "rotation": [
+        0,
+        4,
+        0
+      ]
+    }
+  },
+  "textures": {
+    "particle": "stellaria:item/staff_of_fury"
+  }
+}

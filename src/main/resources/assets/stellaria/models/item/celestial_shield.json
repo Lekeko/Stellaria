@@ -1,0 +1,106 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "gui_light": "front",
+  "texture_size": [
+    256,
+    256
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        72.98999999999978,
+        0.6300000000001091,
+        6.630000000000109
+      ],
+      "translation": [
+        0,
+        0.75,
+        1
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.76
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        72.98999999999978,
+        0.6300000000001091,
+        6.630000000000109
+      ],
+      "translation": [
+        0,
+        0.75,
+        1
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.76
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        0,
+        18
+      ],
+      "translation": [
+        1.75,
+        -1.75,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        0,
+        18
+      ],
+      "translation": [
+        1.75,
+        -1.75,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        10.5,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "fixed": {
+      "translation": [
+        0,
+        0,
+        0.25
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    }
+  },
+  "textures": {
+    "particle": "stellaria:item/celestial_shield"
+  }
+}

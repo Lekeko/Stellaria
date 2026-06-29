@@ -1,0 +1,9 @@
+{
+  "stages": [
+    {
+      "type": "veil:blit",
+      "shader": "stellaria:zregos_laser_screen",
+      "in": "minecraft:main"
+    }
+  ]
+}

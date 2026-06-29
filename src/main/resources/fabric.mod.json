@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "stellaria",
+	"version": "${version}",
+	"name": "Stellaria",
+	"description": "A questionable balanced mod about fighting dragons and their servants (STILL IN ALPHA/DEVELOPMENT)",
+	"authors": [
+		"Keko"
+	],
+	"contact": {
+		"homepage": "https://www.youtube.com/@LeKeko14",
+		"sources": "https://github.com/Lekeko/Stellaria"
+	},
+	"license": "MIT",
+	"icon": "assets/stellaria/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.keko.stellaria.Stellaria"
+		],
+        "client": [
+          "com.keko.stellaria.StellariaClient"
+        ],
+		"fabric-datagen": [
+			"com.keko.stellaria.StellariaDataGenerator"
+		]
+	},
+	"mixins": [
+		"stellaria.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

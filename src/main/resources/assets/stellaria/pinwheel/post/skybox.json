@@ -1,0 +1,9 @@
+{
+  "stages": [
+    {
+      "type": "veil:blit",
+      "shader": "stellaria:skybox",
+      "in": "minecraft:main"
+    }
+  ]
+}

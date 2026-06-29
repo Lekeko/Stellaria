@@ -1,0 +1,40 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 14,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "fist2",
+					"pivot": [-85, 21, 0],
+					"cubes": [
+						{"origin": [-95, 11, -10], "size": [20, 20, 20], "uv": [0, 0]},
+						{"origin": [-95, 13, -16], "size": [20, 12, 6], "pivot": [-85, 19, -13], "rotation": [0, 0, 25], "uv": [80, 18]}
+					]
+				},
+				{
+					"name": "shockwave",
+					"pivot": [0, 22, 1],
+					"cubes": [
+						{"origin": [0, 8, -15], "size": [0, 30, 30], "uv": [0, 40]}
+					]
+				},
+				{
+					"name": "fist1",
+					"pivot": [85, 21, 0],
+					"cubes": [
+						{"origin": [75, 11, -10], "size": [20, 20, 20], "uv": [60, 40]},
+						{"origin": [75, 13, -16], "size": [20, 12, 6], "pivot": [85, 19, -13], "rotation": [0, 0, -25], "uv": [80, 0]}
+					]
+				}
+			]
+		}
+	]
+}

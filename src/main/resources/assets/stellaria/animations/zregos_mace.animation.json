@@ -1,0 +1,110 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"mace.loop": {
+			"animation_length": 1,
+			"bones": {
+				"spikes": {
+					"position": {
+						"0.0": {
+							"vector": [0, -13, 0],
+							"easing": "easeOutBack"
+						},
+						"0.3333": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						},
+						"0.6667": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, -13, 0],
+							"easing": "easeOutBack"
+						}
+					}
+				},
+				"spikes2": {
+					"position": {
+						"0.3333": {
+							"vector": [0, 0, 0]
+						},
+						"0.6667": {
+							"vector": [0, 0, 13],
+							"easing": "easeOutBack",
+							"easingArgs": [3]
+						},
+						"1.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						}
+					}
+				},
+				"spikes3": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.3333": {
+							"vector": [13, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"0.6667": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						}
+					}
+				},
+				"spikes4": {
+					"position": {
+						"0.3333": {
+							"vector": [0, 0, 0]
+						},
+						"0.6667": {
+							"vector": [0, 0, -13],
+							"easing": "easeOutBack",
+							"easingArgs": [3]
+						},
+						"1.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						}
+					}
+				},
+				"spikes5": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.3333": {
+							"vector": [-13, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"0.6667": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						}
+					}
+				},
+				"spikes6": {
+					"position": {
+						"0.0": {
+							"vector": [0, 13, 0],
+							"easing": "easeOutBack"
+						},
+						"0.3333": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						},
+						"0.6667": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, 13, 0],
+							"easing": "easeOutBack"
+						}
+					}
+				}
+			}
+		}
+	}
+}

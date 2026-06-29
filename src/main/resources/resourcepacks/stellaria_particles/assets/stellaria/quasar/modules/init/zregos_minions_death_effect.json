@@ -1,0 +1,14 @@
+{
+  "module": "light",
+  "gradient": {
+    "color": [
+      255.0,
+      255.0,
+      255.0,
+      255.0
+    ]
+  },
+  "brightness": 0,
+  "falloff": 2.0,
+  "radius": 3
+}

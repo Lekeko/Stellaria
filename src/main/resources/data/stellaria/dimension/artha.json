@@ -1,0 +1,25 @@
+{
+  "type": "stellaria:artha",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "stellaria:artha",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biomes": [
+        {
+          "biome": "stellaria:lyra",
+          "parameters": {
+            "temperature": 0.5,
+            "humidity": 0.3,
+            "continentalness": 0.2,
+            "erosion": 0.1,
+            "weirdness": -0.3,
+            "depth": 0,
+            "offset": 0
+          }
+        }
+      ],
+      "biome": "stellaria:lyra"
+    }
+  }
+}

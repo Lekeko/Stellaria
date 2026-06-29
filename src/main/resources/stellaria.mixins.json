@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "package": "com.keko.stellaria.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ArthaKeepInvMixin",
+    "NoGravityMixin",
+    "ProjectileWeaponAccessor",
+    "ShieldMixin",
+    "VanilaBowMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "ArthaAnimGlideMixin",
+    "CameraAccessor",
+    "CloudsBeGoneMixin",
+    "ItemRendererAccessor",
+    "ItemRendererMixin",
+    "ModelLoaderMixin"
+  ]
+}

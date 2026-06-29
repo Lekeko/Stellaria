@@ -1,0 +1,49 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"zregos.open": {
+			"animation_length": 7,
+			"bones": {
+				"LowerMouth": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [20, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"6.5": {
+							"vector": [20, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"7.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutBack"
+						}
+					}
+				},
+				"UpperMouth": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [-22.5, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"6.5": {
+							"vector": [-22.5, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"7.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutBack"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

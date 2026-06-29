@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "projectile",
+					"pivot": [-0.17678, -8.14645, -0.17678],
+					"cubes": [
+						{"origin": [-8, -16, -8], "size": [16, 16, 16], "uv": [68, 66]},
+						{"origin": [-8, -16, -8], "size": [16, 16, 16], "inflate": 0.01, "pivot": [0, -9, 0], "rotation": [0, 0, -45], "uv": [68, 66]},
+						{"origin": [-8, -16, -8], "size": [16, 16, 16], "inflate": 0.03, "pivot": [0, -9, 0], "rotation": [45, 0, 0], "uv": [68, 66]},
+						{"origin": [-8, -16, -8], "size": [16, 16, 16], "inflate": 0.02, "pivot": [0, -9, 0], "rotation": [0, -45, 0], "uv": [68, 66]}
+					]
+				}
+			]
+		}
+	]
+}

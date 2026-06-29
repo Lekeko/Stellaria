@@ -1,0 +1,19 @@
+{
+  "sprite_data": {
+    "sprite": "stellaria:textures/particle/zregos_minions_death_effect.png"
+  },
+  "additive": true,
+  "render_style": "BILLBOARD",
+  "init_modules": [
+  ],
+  "update_modules": [
+  ],
+  "collision_modules": [
+  ],
+  "forces": [
+  ],
+  "render_modules": [
+    "stellaria:color/zregos_minions_death_effect"
+  ],
+  "should_collide": false
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "stellaria:item/zregos_mace_block_inv"
+  }
+}

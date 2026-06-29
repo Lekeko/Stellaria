@@ -1,0 +1,18 @@
+{
+  "vertex": "veil:blit_screen",
+  "fragment": "stellaria:zregos_laser",
+  "textures": {
+    "DistortTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/distort/distort_texturescae.png"
+    },
+    "HighlightTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/skybox/varslia/highlight.png"
+    },
+    "StarTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/skybox/varslia/stars.png"
+    }
+  }
+}

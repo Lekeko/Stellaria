@@ -1,0 +1,9 @@
+{
+  "stages": [
+    {
+      "type": "veil:blit",
+      "shader": "stellaria:zregos_minions_skybox",
+      "in": "minecraft:main"
+    }
+  ]
+}

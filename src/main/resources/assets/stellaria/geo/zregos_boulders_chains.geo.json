@@ -1,0 +1,38 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 1024,
+				"texture_height": 1024,
+				"visible_bounds_width": 11,
+				"visible_bounds_height": 39,
+				"visible_bounds_offset": [0, 13.5, 0]
+			},
+			"bones": [
+				{
+					"name": "chainwbold",
+					"pivot": [0, 481, 0]
+				},
+				{
+					"name": "core",
+					"parent": "chainwbold",
+					"pivot": [0, 481, 0],
+					"cubes": [
+						{"origin": [-8, 473, -8], "size": [16, 16, 16], "inflate": 16, "uv": [48, 55], "mirror": true}
+					]
+				},
+				{
+					"name": "chain",
+					"parent": "chainwbold",
+					"pivot": [0, 0.5, 0],
+					"cubes": [
+						{"origin": [-16, 0, 0], "size": [32, 457, 0], "uv": [36, 119]},
+						{"origin": [-16, 0, 0], "size": [32, 457, 0], "pivot": [0, 228.5, 0], "rotation": [0, -90, 0], "uv": [36, 119]}
+					]
+				}
+			]
+		}
+	]
+}

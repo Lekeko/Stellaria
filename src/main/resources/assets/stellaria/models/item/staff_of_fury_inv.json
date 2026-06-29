@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "stellaria:item/staff_of_fury_inv"
+  },
+  "gui_light": "front"
+}

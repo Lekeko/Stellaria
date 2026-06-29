@@ -1,0 +1,73 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "texture_size": [
+    64,
+    64
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        65.25,
+        0,
+        0
+      ],
+      "translation": [
+        -4.75,
+        10,
+        -1.75
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        65.25,
+        0,
+        0
+      ],
+      "translation": [
+        -4.75,
+        10,
+        -1.75
+      ]
+    },
+    "firstperson_righthand": {
+      "translation": [
+        0.25,
+        0,
+        -3
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    "firstperson_lefthand": {
+      "translation": [
+        0.25,
+        0,
+        -3
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        90,
+        0
+      ],
+      "translation": [
+        1.5,
+        -2.25,
+        0
+      ]
+    }
+  },
+  "textures": {
+    "particle": "stellaria:item/scoria_corestone_model"
+  }
+}

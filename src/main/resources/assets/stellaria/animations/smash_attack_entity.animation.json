@@ -1,0 +1,89 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"smash_attack_entity.smash": {
+			"animation_length": 1.4583,
+			"bones": {
+				"shockwave": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 0, 0]
+						},
+						"0.6667": {
+							"vector": [1, 0, 0]
+						},
+						"1.0833": {
+							"vector": [1, 30, 30],
+							"easing": "easeOutSine"
+						}
+					}
+				},
+				"fist1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.625": {
+							"vector": [0, 0, 0]
+						},
+						"0.6667": {
+							"vector": [10, 0, 0],
+							"easing": "easeOutQuad"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 60, 0]
+						},
+						"0.375": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutBack",
+							"easingArgs": [3]
+						},
+						"0.625": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"0.6667": {
+							"vector": [-76, 0, 0],
+							"easing": "easeOutQuad"
+						}
+					}
+				},
+				"fist2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.625": {
+							"vector": [0, 0, 0]
+						},
+						"0.6667": {
+							"vector": [-10, 0, 0],
+							"easing": "easeOutQuad"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, -60, 0]
+						},
+						"0.375": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutBack",
+							"easingArgs": [3]
+						},
+						"0.625": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"0.6667": {
+							"vector": [74, 0, 0],
+							"easing": "easeOutQuad"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

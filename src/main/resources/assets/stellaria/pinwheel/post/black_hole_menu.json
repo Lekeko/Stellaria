@@ -1,0 +1,9 @@
+{
+  "stages": [
+    {
+      "type": "veil:blit",
+      "shader": "stellaria:black_hole_menu",
+      "in": "minecraft:main"
+    }
+  ]
+}

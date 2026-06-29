@@ -1,0 +1,85 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"draconic_crystal.idle": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"main": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, 3, 0],
+							"easing": "easeOutSine"
+						},
+						"3.0": {
+							"vector": [0, -3, 0],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"crystalBase": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, 0, 2],
+							"easing": "easeOutSine"
+						},
+						"3.0": {
+							"vector": [0, 0, -2],
+							"easing": "easeInOutSine"
+						},
+						"3.5": {
+							"vector": [0, 0, -180],
+							"easing": "easeOutCirc"
+						},
+						"4.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						}
+					}
+				},
+				"handle": {
+					"rotation": {
+						"3.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						},
+						"3.5": {
+							"vector": [0, 0, 180],
+							"easing": "easeOutCirc"
+						},
+						"4.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						}
+					}
+				},
+				"handle2": {
+					"rotation": {
+						"3.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						},
+						"3.5": {
+							"vector": [0, 0, 180],
+							"easing": "easeOutCirc"
+						},
+						"4.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						}
+					}
+				}
+			}
+		}
+	}
+}

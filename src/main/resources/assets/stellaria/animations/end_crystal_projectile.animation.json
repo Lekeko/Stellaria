@@ -1,0 +1,40 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"ecp.spin": {
+			"animation_length": 2,
+			"bones": {
+				"core": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.0": {
+							"vector": [360, 0, -360]
+						}
+					}
+				},
+				"glass1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.0": {
+							"vector": [-360, 360, 0]
+						}
+					}
+				},
+				"glass2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.0": {
+							"vector": [180, -360, 360]
+						}
+					}
+				}
+			}
+		}
+	}
+}

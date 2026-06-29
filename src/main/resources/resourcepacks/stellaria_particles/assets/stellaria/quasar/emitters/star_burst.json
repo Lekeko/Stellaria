@@ -1,0 +1,11 @@
+{
+  "max_lifetime": 4,
+  "loop": false,
+  "rate": 1,
+  "count": 50,
+  "emitter_settings": {
+    "shape": "stellaria:star_burst",
+    "particle_settings": "stellaria:star_burst"
+  },
+  "particle_data": "stellaria:star_burst"
+}

@@ -1,0 +1,10 @@
+{
+  "vertex": "veil:blit_screen",
+  "fragment": "stellaria:zregos_dash",
+  "textures": {
+    "DistortTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/distort/distort_texturescae.png"
+    }
+  }
+}

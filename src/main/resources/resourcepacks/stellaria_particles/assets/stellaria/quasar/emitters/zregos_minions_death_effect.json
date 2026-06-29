@@ -1,0 +1,11 @@
+{
+  "max_lifetime": 4,
+  "loop": false,
+  "rate": 1,
+  "count": 50,
+  "emitter_settings": {
+    "shape": "stellaria:zregos_minions_death_effect",
+    "particle_settings": "stellaria:zregos_minions_death_effect"
+  },
+  "particle_data": "stellaria:zregos_minions_death_effect"
+}

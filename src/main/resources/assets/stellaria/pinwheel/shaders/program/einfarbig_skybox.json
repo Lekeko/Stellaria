@@ -1,0 +1,18 @@
+{
+  "vertex": "veil:blit_screen",
+  "fragment": "stellaria:einfarbig_skybox",
+  "textures": {
+    "SoftTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/skybox/einfarbig/soft.png"
+    },
+    "HighlightTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/skybox/einfarbig/highlight.png"
+    },
+    "StarTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/skybox/einfarbig/stars.png"
+    }
+  }
+}

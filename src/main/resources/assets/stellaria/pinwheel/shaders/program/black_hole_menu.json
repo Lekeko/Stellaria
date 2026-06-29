@@ -1,0 +1,14 @@
+{
+  "vertex": "veil:blit_screen",
+  "fragment": "stellaria:black_hole_menu",
+  "textures": {
+    "BlackHoleMenuTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/vfx/black_hole_menu.png"
+    },
+    "ConeTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/vfx/cone.png"
+    }
+  }
+}

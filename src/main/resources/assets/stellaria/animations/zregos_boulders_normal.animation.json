@@ -1,0 +1,144 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"zregos_boulders_normal.spin": {
+			"animation_length": 8,
+			"bones": {
+				"monolith": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"8.0": {
+							"vector": [0, -360, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, -10, 0],
+							"easing": "easeOutSine"
+						},
+						"3.0": {
+							"vector": [0, 10, 0],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						},
+						"5.0": {
+							"vector": [0, -10, 0],
+							"easing": "easeOutSine"
+						},
+						"7.0": {
+							"vector": [0, 10, 0],
+							"easing": "easeInOutSine"
+						},
+						"8.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						}
+					}
+				},
+				"core": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"8.0": {
+							"vector": [-360, 720, 360]
+						}
+					}
+				},
+				"pillar1": {
+					"position": {
+						"0.5833": {
+							"vector": [0, 0, 0]
+						},
+						"1.3333": {
+							"vector": [0, 28, 0],
+							"easing": "easeOutCirc"
+						},
+						"2.0833": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						}
+					}
+				},
+				"pillar2": {
+					"position": {
+						"4.1667": {
+							"vector": [0, 0, 0]
+						},
+						"4.9167": {
+							"vector": [0, 28, 0],
+							"easing": "easeOutCirc"
+						},
+						"5.6667": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						}
+					}
+				},
+				"pillar3": {
+					"position": {
+						"6.0": {
+							"vector": [0, 0, 0]
+						},
+						"6.75": {
+							"vector": [0, -28, 0],
+							"easing": "easeOutCirc"
+						},
+						"7.5": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						}
+					}
+				},
+				"pillar4": {
+					"position": {
+						"2.25": {
+							"vector": [0, 0, 0]
+						},
+						"3.0": {
+							"vector": [0, -28, 0],
+							"easing": "easeOutCirc"
+						},
+						"3.75": {
+							"vector": [0, 0, 0],
+							"easing": "easeOutCirc"
+						}
+					}
+				}
+			}
+		},
+		"zregos_boulders_normal.lunge": {
+			"animation_length": 1,
+			"bones": {
+				"monolith": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, 1000, 0],
+							"easing": "easeOutCirc"
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.5": {
+							"vector": [0, 1, 0],
+							"easing": "easeOutCirc"
+						}
+					}
+				}
+			}
+		}
+	}
+}

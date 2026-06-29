@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "multi_bench",
+  "key": {
+    "1": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "2": {
+      "item": "minecraft:ominous_bottle"
+    },
+    "3": {
+      "item": "minecraft:nether_star"
+    },
+    "4": {
+      "item": "minecraft:blaze_powder"
+    },
+    "5": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    " 1 ",
+    "234",
+    " 5 "
+  ],
+  "result": {
+    "count": 1,
+    "id": "stellaria:draconic_crystal_block"
+  }
+}

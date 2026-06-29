@@ -1,0 +1,93 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "texture_size": [
+    64,
+    64
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        -6.639999999999873,
+        21.38000000000011,
+        -84.7800000000002
+      ],
+      "translation": [
+        -1.5,
+        -2,
+        0.25
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -6.639999999999873,
+        21.38000000000011,
+        -84.7800000000002
+      ],
+      "translation": [
+        -1.5,
+        -2,
+        0.25
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        33.48000000000002,
+        -22.710000000000036,
+        -30.320000000000164
+      ],
+      "translation": [
+        -1.5,
+        2.25,
+        0.25
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        33.48000000000002,
+        -22.710000000000036,
+        -30.320000000000164
+      ],
+      "translation": [
+        -1.5,
+        2.25,
+        0.25
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        73.75,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        -1.75,
+        -3.25
+      ]
+    }
+  },
+  "textures": {
+    "particle": "stellaria:item/magmatic_claw_model"
+  }
+}

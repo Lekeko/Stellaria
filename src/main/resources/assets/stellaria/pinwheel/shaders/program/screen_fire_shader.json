@@ -1,0 +1,15 @@
+{
+  "vertex": "veil:blit_screen",
+  "fragment": "stellaria:screen_fire_shader",
+  "textures": {
+    "DistortTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/distort/distort_texture.png"
+    },
+    "StarsTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/vfx/stars_galaxy.png"
+
+    }
+  }
+}

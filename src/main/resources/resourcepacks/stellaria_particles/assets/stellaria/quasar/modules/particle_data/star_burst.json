@@ -1,0 +1,19 @@
+{
+  "sprite_data": {
+    "sprite": "stellaria:textures/particle/simple_star.png"
+  },
+  "additive": true,
+  "render_style": "BILLBOARD",
+  "init_modules": [
+  ],
+  "update_modules": [
+  ],
+  "collision_modules": [
+  ],
+  "forces": [
+  ],
+  "render_modules": [
+    "stellaria:color/star_burst"
+  ],
+  "should_collide": false
+}

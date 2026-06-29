@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 512,
+				"texture_height": 512,
+				"visible_bounds_width": 6,
+				"visible_bounds_height": 4,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 3.58579, 1.5],
+					"cubes": [
+						{"origin": [-12.79289, 8.36396, -21], "size": [17, 8, 61], "pivot": [-2.5, 9, -21], "rotation": [15.76135, -1.79829, -20.62532], "uv": [0, 82]},
+						{"origin": [5.79289, 4.36396, -21], "size": [15, 8, 61], "pivot": [10.5, 5, -21], "rotation": [11.33869, 9.08639, 43.14388], "uv": [156, 82]},
+						{"origin": [-4.20711, 8.36396, -21], "size": [17, 8, 61], "pivot": [2.5, 9, -21], "rotation": [15.76135, 1.79829, 20.62532], "uv": [0, 151]},
+						{"origin": [-20.79289, 4.36396, -21], "size": [15, 8, 61], "pivot": [-10.5, 5, -21], "rotation": [11.33869, -9.08639, -43.14388], "uv": [156, 151]},
+						{"origin": [-10, -6.41421, -38], "size": [20, 20, 62], "pivot": [0, 3.58579, 1.5], "rotation": [0, 0, 45], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

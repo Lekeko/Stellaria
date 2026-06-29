@@ -1,0 +1,98 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 7,
+				"visible_bounds_height": 7,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "bone3",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "bone",
+					"parent": "bone3",
+					"pivot": [0, 12, 0],
+					"cubes": [
+						{"origin": [-8, 4, -8], "size": [16, 16, 16], "uv": [0, 0]},
+						{"origin": [-8, 4, -8], "size": [16, 16, 16], "inflate": 0.2, "pivot": [0, 11, 0], "rotation": [-45, 0, 0], "uv": [0, 32]},
+						{"origin": [-8, 4, -8], "size": [16, 16, 16], "inflate": 0.1, "pivot": [0, 11, 0], "rotation": [0, -45, 0], "uv": [0, 64]}
+					]
+				},
+				{
+					"name": "bone2",
+					"parent": "bone3",
+					"pivot": [0, 12, 0],
+					"rotation": [90, 0, 0],
+					"cubes": [
+						{"origin": [-8, 4, -8], "size": [16, 16, 16], "inflate": 0.1, "pivot": [0, 11, 0], "rotation": [0, -45, 0], "uv": [64, 32]}
+					]
+				},
+				{
+					"name": "spikesAll",
+					"parent": "bone3",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "spikes",
+					"parent": "spikesAll",
+					"pivot": [0, 12, 0],
+					"cubes": [
+						{"origin": [-2.25, 31, -2.25], "size": [4.5, 22, 4.5], "uv": [64, 64]}
+					]
+				},
+				{
+					"name": "spikes2",
+					"parent": "spikesAll",
+					"pivot": [0, 12, 0],
+					"rotation": [90, 0, 0],
+					"cubes": [
+						{"origin": [-2.25, 31, -2.25], "size": [4.5, 22, 4.5], "uv": [80, 64]}
+					]
+				},
+				{
+					"name": "spikes3",
+					"parent": "spikesAll",
+					"pivot": [0, 12, 0],
+					"rotation": [0, 0, -90],
+					"cubes": [
+						{"origin": [-2.25, 31, -2.25], "size": [4.5, 22, 4.5], "uv": [64, 90]}
+					]
+				},
+				{
+					"name": "spikes4",
+					"parent": "spikesAll",
+					"pivot": [0, 12, 0],
+					"rotation": [-90, 0, 0],
+					"cubes": [
+						{"origin": [-2.25, 31, -2.25], "size": [4.5, 22, 4.5], "uv": [80, 90]}
+					]
+				},
+				{
+					"name": "spikes5",
+					"parent": "spikesAll",
+					"pivot": [0, 12, 0],
+					"rotation": [0, 0, 90],
+					"cubes": [
+						{"origin": [-2.25, 31, -2.25], "size": [4.5, 22, 4.5], "uv": [0, 96]}
+					]
+				},
+				{
+					"name": "spikes6",
+					"parent": "spikesAll",
+					"pivot": [0, 12, 0],
+					"rotation": [0, 0, -180],
+					"cubes": [
+						{"origin": [-2.25, 31, -2.25], "size": [4.5, 22, 4.5], "uv": [16, 96]}
+					]
+				}
+			]
+		}
+	]
+}
