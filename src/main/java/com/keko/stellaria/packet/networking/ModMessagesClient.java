@@ -92,7 +92,6 @@ public class ModMessagesClient {
         ClientPlayNetworking.registerGlobalReceiver(StellarEventHudSwitchS2C.ID, (payload, context) -> {
             context.client().execute(() -> {
                 ArthaHudHandler.setAlive(payload.alive());
-                ArthaHudHandler.setIntermision(payload.intermision());
                 ArthaHudHandler.setToSpawn(payload.toSpawn());
                 ArthaHudHandler.setWave(payload.wave());
                 switch (payload.onOffIdle()){
