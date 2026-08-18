@@ -1,13 +1,8 @@
 package com.keko.stellaria.entity.decour.zregosMace;
 
-import com.keko.stellaria.entity.ModEntities;
 import com.keko.stellaria.entity.ModProjectiles;
-import com.keko.stellaria.entity.boss.zregos.Zregos;
-import com.keko.stellaria.entity.decour.zregosBoulders.ZregosBoulderNormal;
 import com.keko.stellaria.entity.projectiles.boss.zregos.MaceProjectile;
 import com.keko.stellaria.helper.SpaceHelpers;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
@@ -22,7 +17,6 @@ import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 

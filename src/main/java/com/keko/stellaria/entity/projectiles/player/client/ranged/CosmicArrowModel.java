@@ -1,7 +1,6 @@
 package com.keko.stellaria.entity.projectiles.player.client.ranged;
 
 import com.keko.stellaria.Stellaria;
-import com.keko.stellaria.entity.projectiles.player.melee.MeleeSlash;
 import com.keko.stellaria.entity.projectiles.player.ranged.CosmicArrow;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;

@@ -1,7 +1,6 @@
 package com.keko.stellaria.entity.boss.minions.zregos.client.ZregosServant;
 
 import com.keko.stellaria.Stellaria;
-import com.keko.stellaria.entity.boss.minions.zregos.CosmicSpider;
 import com.keko.stellaria.entity.boss.minions.zregos.ZregosServant;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;

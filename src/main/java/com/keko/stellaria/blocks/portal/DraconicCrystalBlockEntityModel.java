@@ -1,7 +1,6 @@
 package com.keko.stellaria.blocks.portal;
 
 import com.keko.stellaria.Stellaria;
-import com.keko.stellaria.entity.projectiles.boss.zregos.MaceProjectile;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;
 

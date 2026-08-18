@@ -1,7 +1,6 @@
 package com.keko.stellaria.blocks.portal;
 
 import com.keko.stellaria.blocks.ModBlockEntity;
-import com.keko.stellaria.entity.boss.zregos.Zregos;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;

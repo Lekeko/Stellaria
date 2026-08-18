@@ -1,13 +1,9 @@
 package com.keko.stellaria.blocks.maceBlock;
 
 import com.keko.stellaria.Stellaria;
-import com.keko.stellaria.blocks.portal.DraconicCrystalBlockEntity;
-import com.keko.stellaria.blocks.portal.DraconicCrystalBlockEntityModel;
-import com.keko.stellaria.entity.decour.zregosMace.ZregosMace;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
-import net.fabricmc.loader.impl.lib.sat4j.core.Vec;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;

@@ -3,7 +3,6 @@ package com.keko.stellaria.mixin;
 import com.keko.stellaria.Stellaria;
 import com.keko.stellaria.items.ModItems;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;

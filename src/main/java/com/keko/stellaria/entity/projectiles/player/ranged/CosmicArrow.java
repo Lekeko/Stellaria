@@ -1,10 +1,7 @@
 package com.keko.stellaria.entity.projectiles.player.ranged;
 
 import com.keko.stellaria.helper.SpaceHelpers;
-import com.keko.stellaria.particles.ModParticles;
 import com.keko.stellaria.world.dimension.ModDimensions;
-import net.minecraft.client.particle.Particle;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -20,7 +17,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -28,8 +24,6 @@ import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceC
 import software.bernie.geckolib.animation.AnimatableManager;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 public class CosmicArrow extends AbstractArrow implements GeoEntity {
     private float clientTick = 0;

@@ -2,8 +2,6 @@ package com.keko.stellaria.screenVfx;
 
 import com.keko.stellaria.Stellaria;
 import com.keko.stellaria.component.ModDataComponentTypes;
-import com.keko.stellaria.effects.ModStatusEffects;
-import com.keko.stellaria.entity.decour.zregosBoulders.ZregosBoulderNormal;
 import com.keko.stellaria.items.ModItems;
 import com.keko.stellaria.renderHelpers.ScreenHelpers;
 import com.keko.stellaria.screenVfx.chains.ZregosChain;

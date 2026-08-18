@@ -9,12 +9,9 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.ai.goal.OfferFlowerGoal;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.cache.object.BakedGeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
-
-import java.awt.*;
 
 public class CosmicSpiderRenderer extends GeoEntityRenderer<CosmicSpider> {
     public CosmicSpiderRenderer(EntityRendererProvider.Context context) {

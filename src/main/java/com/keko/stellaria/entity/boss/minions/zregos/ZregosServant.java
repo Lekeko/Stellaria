@@ -1,6 +1,5 @@
 package com.keko.stellaria.entity.boss.minions.zregos;
 
-import com.keko.stellaria.Stellaria;
 import com.keko.stellaria.entity.ModProjectiles;
 import com.keko.stellaria.entity.projectiles.minions.zregos.ZregosServantProjectile;
 import com.keko.stellaria.helper.SpaceHelpers;

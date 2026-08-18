@@ -1,12 +1,8 @@
 package com.keko.stellaria.blocks.maceBlock;
 
 import com.keko.stellaria.blocks.ModBlockEntity;
-import com.keko.stellaria.blocks.portal.DraconicCrystalBlockEntity;
-import com.keko.stellaria.world.dimension.ModDimensions;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;

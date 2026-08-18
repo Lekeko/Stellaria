@@ -1,6 +1,5 @@
 package com.keko.stellaria.entity.projectiles.player.melee;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;

@@ -1,7 +1,6 @@
 package com.keko.stellaria.items.stellariaWeaponTypes.zregos.celestialShield;
 
 import com.keko.stellaria.Stellaria;
-import com.keko.stellaria.items.stellariaWeaponTypes.zregos.cosmicBow.CosmicBow;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;
 

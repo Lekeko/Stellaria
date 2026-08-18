@@ -2,13 +2,10 @@ package com.keko.stellaria.particles;
 
 import com.keko.stellaria.Stellaria;
 import foundry.veil.api.client.render.VeilRenderSystem;
-import foundry.veil.api.quasar.data.ParticleSettings;
 import foundry.veil.api.quasar.particle.ParticleEmitter;
 import foundry.veil.api.quasar.particle.ParticleSystemManager;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
-import org.joml.Vector3fc;
 
 public class QuasarParticlesHandler {
 

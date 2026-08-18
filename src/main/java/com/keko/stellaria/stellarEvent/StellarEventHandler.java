@@ -6,8 +6,8 @@ import com.keko.stellaria.entity.boss.minions.zregos.Crystalius;
 import com.keko.stellaria.entity.boss.minions.zregos.ZregosServant;
 import com.keko.stellaria.entity.boss.zregos.Zregos;
 import com.keko.stellaria.entity.decour.zregosShatter.SpawnShatter;
-import com.keko.stellaria.entity.decour.zregosShatter.ZregosShatter;
 import com.keko.stellaria.packet.BeginEndAnimS2C;
+import com.keko.stellaria.packet.SendEnemySpawnTimerC2S;
 import com.keko.stellaria.packet.StellarEventHudSwitchS2C;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.server.level.ServerLevel;
@@ -99,6 +99,10 @@ public class StellarEventHandler {
                 } else {
                     if (stellarEvent.getWaveEntities().isEmpty())
                         stellarEvent.advanceWave();
+                }
+
+                for (Player player : level.players()){
+                    ServerPlayNetworking.send((ServerPlayer) player, new SendEnemySpawnTimerC2S(stellarEvent.getEnemiesSpawnTimer() / 20));
                 }
             }
         }

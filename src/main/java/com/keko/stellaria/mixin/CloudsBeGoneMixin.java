@@ -3,7 +3,6 @@ package com.keko.stellaria.mixin;
 
 import com.keko.stellaria.world.dimension.ModDimensions;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.fabricmc.fabric.mixin.client.rendering.WorldRendererMixin;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.LevelRenderer;
 import org.joml.Matrix4f;

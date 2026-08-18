@@ -1,22 +1,16 @@
 package com.keko.stellaria.entity.projectiles.player.client.ranged;
 
-import com.keko.stellaria.entity.projectiles.player.ranged.CosmicArrow;
 import com.keko.stellaria.entity.projectiles.player.ranged.CosmicBolt;
-import com.keko.stellaria.world.dimension.ModDimensions;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
-import foundry.veil.api.client.util.Easing;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.HashMap;

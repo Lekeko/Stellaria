@@ -1,9 +1,7 @@
 package com.keko.stellaria.items.stellariaWeaponTypes.VanillaModified.mage;
 
 import com.keko.stellaria.entity.ModProjectiles;
-import com.keko.stellaria.entity.projectiles.player.explosive.EndCrystalProjectile;
 import com.keko.stellaria.entity.projectiles.player.mage.AmethystProjectile;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;

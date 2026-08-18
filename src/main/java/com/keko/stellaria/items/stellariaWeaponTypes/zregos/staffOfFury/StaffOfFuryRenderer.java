@@ -1,6 +1,5 @@
 package com.keko.stellaria.items.stellariaWeaponTypes.zregos.staffOfFury;
 
-import com.keko.stellaria.items.stellariaWeaponTypes.zregos.cosmicBow.CosmicBow;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.LightTexture;

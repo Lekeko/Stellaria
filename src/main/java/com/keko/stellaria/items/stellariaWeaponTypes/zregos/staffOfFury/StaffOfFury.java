@@ -4,7 +4,6 @@ import com.keko.stellaria.component.ModDataComponentTypes;
 import com.keko.stellaria.entity.ModProjectiles;
 import com.keko.stellaria.entity.projectiles.player.mage.FuryProjectile;
 import com.keko.stellaria.items.stellariaWeaponTypes.StellarMageWeapon;
-import com.keko.stellaria.items.stellariaWeaponTypes.zregos.cosmicBow.CosmicBow;
 import com.keko.stellaria.world.dimension.ModDimensions;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.server.level.ServerLevel;

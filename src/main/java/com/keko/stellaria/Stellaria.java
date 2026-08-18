@@ -9,17 +9,15 @@ import com.keko.stellaria.entity.ModEntitiesAttributes;
 import com.keko.stellaria.entity.ModProjectiles;
 import com.keko.stellaria.items.ModGroupItems;
 import com.keko.stellaria.items.ModItems;
-import com.keko.stellaria.items.stellariaWeaponTypes.VanillaModified.explosive.EndCrystalListener;
-import com.keko.stellaria.items.stellariaWeaponTypes.VanillaModified.mage.CrystalListener;
+import com.keko.stellaria.logic.overrides.VanillaItemsOverride;
 import com.keko.stellaria.packet.StellarEventHudSwitchS2C;
-import com.keko.stellaria.packet.networking.ModMessagesClient;
+import com.keko.stellaria.packet.networking.ModMessagesServer;
 import com.keko.stellaria.particles.ModParticles;
 import com.keko.stellaria.sounds.ModSounds;
 import com.keko.stellaria.stellarEvent.ArthaDimensionHandler;
 import com.keko.stellaria.stellarEvent.StellarEventHandler;
 import com.keko.stellaria.world.dimension.ModDimensions;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
@@ -37,8 +35,9 @@ import net.minecraft.world.level.Level;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.*;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class Stellaria implements ModInitializer {
 
@@ -68,7 +67,7 @@ public class Stellaria implements ModInitializer {
         ModBlocks.init();
         ModItems.init();
         ModDimensions.init();
-        ModMessagesClient.registerC2SPacket();
+        ModMessagesServer.registerC2SPacket();
         ModEntities.init();
         ModEntitiesAttributes.init();
         ModParticles.init();
@@ -80,10 +79,8 @@ public class Stellaria implements ModInitializer {
 
     private void event(){
         UseItemCallback.EVENT.register((player, world, hand) ->{
-            if (world.dimension() == ModDimensions.ARTHA_LEVEL_KEY){
-                EndCrystalListener.listen(player, world, hand);
-                CrystalListener.listen(player, world, hand);
-            }
+            VanillaItemsOverride.listen(player, world, hand);
+
             return InteractionResultHolder.pass(ItemStack.EMPTY);
 
         });

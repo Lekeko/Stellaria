@@ -2,7 +2,6 @@ package com.keko.stellaria.blocks;
 
 
 import com.keko.stellaria.Stellaria;
-import com.keko.stellaria.blocks.maceBlock.ZregosMaceBlock;
 import com.keko.stellaria.blocks.maceBlock.ZregosMaceBlockEntity;
 import com.keko.stellaria.blocks.portal.DraconicCrystalBlockEntity;
 import net.minecraft.core.Registry;

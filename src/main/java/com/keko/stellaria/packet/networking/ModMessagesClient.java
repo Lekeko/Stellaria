@@ -1,216 +1,119 @@
 package com.keko.stellaria.packet.networking;
 
-
 import com.keko.stellaria.Stellaria;
-import com.keko.stellaria.blocks.ModBlocks;
-import com.keko.stellaria.component.ModDataComponentTypes;
-import com.keko.stellaria.entity.ModProjectiles;
+import com.keko.stellaria.entity.boss.minions.zregos.ZregosServant;
 import com.keko.stellaria.entity.boss.zregos.Zregos;
-import com.keko.stellaria.entity.projectiles.player.explosive.CosmicShieldProjectile;
-import com.keko.stellaria.entity.projectiles.player.melee.MeleeSlash;
-import com.keko.stellaria.entity.projectiles.player.melee.SerpentsProjectile;
-import com.keko.stellaria.items.ModItems;
-import com.keko.stellaria.logic.StellariaConstants;
-import com.keko.stellaria.logic.movement.ArthaGlide;
 import com.keko.stellaria.packet.*;
-import com.keko.stellaria.stellarEvent.StellarEventHandler;
-import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.util.Mth;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.Level;
+import com.keko.stellaria.renderHelpers.ZregosBite;
+import com.keko.stellaria.screenVfx.screenShake.ScreenShakeHandler;
+import com.keko.stellaria.sounds.ModSounds;
+import com.keko.stellaria.stellarEvent.ArthaDimensionHandler;
+import com.keko.stellaria.screenVfx.stellarHud.ArthaHudHandler;
+import com.keko.stellaria.stellarEvent.StellariaSkyboxTypes;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.minecraft.client.Minecraft;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.Vec3;
-import org.joml.Vector3f;
-
-import java.util.List;
-import java.util.Set;
 
 public class ModMessagesClient {
 
 
-    public static final ResourceLocation ARTHA_MOVEMENT = Stellaria.id("artha_movement_packet");
-    public static final ResourceLocation ALERT_ZREGOS_BITE = Stellaria.id("alert_z_b");
-    public static final ResourceLocation ZREGOS_LASER = Stellaria.id("zregos_laser_mmi");//multamuie international
-    public static final ResourceLocation ZREGOS_LASER_DAMAGE = Stellaria.id("zregos_laser_damage");
-    public static final ResourceLocation SLASH_ATTACK = Stellaria.id("slash_attack_packet");
-    public static final ResourceLocation PLAY_ZREGOS_LASER_SOUND = Stellaria.id("play_zregos_laser_sound");
-    public static final ResourceLocation RESET_SHIELD_CHARGES = Stellaria.id("reset_shield_charges");
-    public static final ResourceLocation SHAKE_LASER = Stellaria.id("shake_laser");
-    public static final ResourceLocation ZSERV_PARTICLES = Stellaria.id("zserv_part");
-    public static final ResourceLocation ZREGOS_MINIONS_SKYBOX = Stellaria.id("zregos_minions_skybox");
-    public static final ResourceLocation IDLE_SKYBOX = Stellaria.id("idle_skybox");
-    public static final ResourceLocation BLACK_HOLE_SHADER = Stellaria.id("black_hole_shader");
-    public static final ResourceLocation STELLAR_EVENT_HUD_SWITCH = Stellaria.id("stellar_event_hud_switch");
-    public static final ResourceLocation BEGIN_END_ANIM = Stellaria.id("begin_end_anim");
-    public static final ResourceLocation SEND_HOME = Stellaria.id("send_home");
-
-
-
-    public static void registerC2SPacket() {
-        //SERVER
-        PayloadTypeRegistry.playC2S().register(ArthaMovementC2S.ID, ArthaMovementC2S.CODEC);
-        PayloadTypeRegistry.playS2C().register(AlertPlayerZregosBiteS2C.ID, AlertPlayerZregosBiteS2C.CODEC);
-        PayloadTypeRegistry.playS2C().register(RenderZregosLaserS2C.ID, RenderZregosLaserS2C.CODEC);
-        PayloadTypeRegistry.playC2S().register(ZregosLaserDamageC2S.ID, ZregosLaserDamageC2S.CODEC);
-        PayloadTypeRegistry.playC2S().register(SlashAttackC2S.ID, SlashAttackC2S.CODEC);
-        PayloadTypeRegistry.playS2C().register(PlayZregosLaserSoundC2S.ID, PlayZregosLaserSoundC2S.CODEC);
-        PayloadTypeRegistry.playC2S().register(ResetShieldChargesC2S.ID, ResetShieldChargesC2S.CODEC);
-        PayloadTypeRegistry.playS2C().register(ShakeLaserS2C.ID, ShakeLaserS2C.CODEC);
-        PayloadTypeRegistry.playS2C().register(ZServPartS2C.ID, ZServPartS2C.CODEC);
-        PayloadTypeRegistry.playS2C().register(ZregosMinionsSkyboxS2C.ID, ZregosMinionsSkyboxS2C.CODEC);
-        PayloadTypeRegistry.playS2C().register(IdleSkyboxS2C.ID, IdleSkyboxS2C.CODEC);
-        PayloadTypeRegistry.playS2C().register(BlackHoleShaderS2C.ID, BlackHoleShaderS2C.CODEC);
-        PayloadTypeRegistry.playS2C().register(StellarEventHudSwitchS2C.ID, StellarEventHudSwitchS2C.CODEC);
-        PayloadTypeRegistry.playS2C().register(BeginEndAnimS2C.ID, BeginEndAnimS2C.CODEC);
-        PayloadTypeRegistry.playC2S().register(SendHomeC2S.ID, SendHomeC2S.CODEC);
-
-
-
-        ServerPlayNetworking.registerGlobalReceiver(ArthaMovementC2S.ID, (payload, context) -> {
-            context.server().execute(() -> {
-                ArthaGlide.glidePLayer(context.player(), payload.forwardImpulse(), payload.leftImpulse(), payload.jump(), payload.shift());
+    public static void registerS2CPacket(){
+        ClientPlayNetworking.registerGlobalReceiver(AlertPlayerZregosBiteS2C.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                ZregosBite.setActive(true);
+                context.client().player.playSound(SoundEvents.AMETHYST_CLUSTER_BREAK, 10, 1.5f);
             });
         });
-        ServerPlayNetworking.registerGlobalReceiver(ResetShieldChargesC2S.ID, (payload, context) -> {
-            context.server().execute(() -> {
 
-                CosmicShieldProjectile cosmicShieldProjectile = new CosmicShieldProjectile(ModProjectiles.COSMIC_SHIELD_PROJECTILE, context.player().level());
-                cosmicShieldProjectile.setPos(context.player().position().add(context.player().getViewVector(1.0f)));
-                cosmicShieldProjectile.setPower(payload.amount());
-                float speed = 8.0f;
-                cosmicShieldProjectile.setDeltaMovement(context.player().getViewVector(1.0f).scale(speed));
-                cosmicShieldProjectile.setOwner(context.player());
-                context.player().level().addFreshEntity(cosmicShieldProjectile);
-                context.player().getMainHandItem().set(ModDataComponentTypes.SHIELD_CHARGES, 0);
-
+        ClientPlayNetworking.registerGlobalReceiver(ZServPartS2C.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                ZregosServant zregosServant = (ZregosServant) context.client().level.getEntity(payload.id());
+                ZregosServant.spawnParticle(zregosServant,Stellaria.id("star_burst"));
             });
         });
-        ServerPlayNetworking.registerGlobalReceiver(ZregosLaserDamageC2S.ID, (payload, context) -> {
-            context.server().execute(() -> {
 
-                Vector3f start = payload.start();
-                Vector3f end = payload.end();
-
-                Vector3f a = start.sub(end).normalize();
-                Zregos zregos = (Zregos) context.player().level().getEntity(payload.ID_ZREGOS());
-                if (zregos == null) {
-                    System.out.println("COULDNT FIND ZREGOS");
-                    return;
-                }
-
-                for (Player player :  zregos.level().players()) {
-
-                    Vector3f b = player.getPosition(1.0f).subtract(zregos.getPosition(1.0f)).normalize().toVector3f();
-                    double dot = a.x * b.x + a.y * b.y + a.z * b.z;
-                    dot = Math.max(-1.0, Math.min(1.0, dot));
-                    double angleDeg = Math.acos(dot) * (180.0 / Math.PI);
-                    float radToDmg = 4.5f;
-                    float shakeAmp = (float) Mth.clamp(1.0f - angleDeg / (radToDmg * 10), 0.0f, 1.0f);
-                    ServerPlayNetworking.send((ServerPlayer) player, new ShakeLaserS2C(shakeAmp * 2));
-
-
-                    if (angleDeg < radToDmg) {
-                        ServerPlayNetworking.send((ServerPlayer) player, new RenderZregosLaserS2C(zregos.getId(), false, false,1.0f));
-                        player.hurt(zregos.level().damageSources().mobAttack(zregos), 40.0f);
-                    }else {
-                        ServerPlayNetworking.send((ServerPlayer) player, new RenderZregosLaserS2C(zregos.getId(), false, false,-1.0f));
-
+        ClientPlayNetworking.registerGlobalReceiver(RenderZregosLaserS2C.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                try {
+                    Zregos zregos = (Zregos) context.client().level.getEntity(payload.id());
+                    if (payload.amp() != 0){
+                        zregos.setLaserScreenAmp(zregos.getLaserScreenAmp() + Minecraft.getInstance().getTimer().getGameTimeDeltaTicks() / 10f * payload.amp());
+                        return;
                     }
-                }
-            });
-        });
-
-        ServerPlayNetworking.registerGlobalReceiver(SlashAttackC2S.ID, (payload, context) -> {
-            context.server().execute(() -> {
-
-                MeleeSlash meleeSlash = new MeleeSlash(ModProjectiles.MELEE_SLASH, context.player().level());
-                meleeSlash.setPos(context.player().getPosition(1.0f).add(0.0f,1.0f,0.0f));
-                Vec3 look = context.player().getLookAngle();
-                Vec3 adjusted = new Vec3(look.x, look.y, look.z).normalize();
-                meleeSlash.setSlashType(payload.SWORD_TYPE());
-
-                meleeSlash.setDeltaMovement(adjusted.scale(7.0f));
-                meleeSlash.setOwner(context.player());
-                context.player().level().addFreshEntity(meleeSlash);
-
-
-                if (payload.SWORD_TYPE() == StellariaConstants.SERPENTS_BLADE.ordinal()){
-                    int proj = 3;
-                    float disp = 0.5f;
-                    float speed = 4.4f;
-                    Vec3 dir = adjusted;
-
-                    for (int i = 0; i < proj; i++) {
-                        SerpentsProjectile serpentsProjectile = new SerpentsProjectile(ModProjectiles.SERPENTS_PROJECTILE, context.player().level());
-                        serpentsProjectile.setPos(context.player().getPosition(1.0f).add(0.0f, 1.0f, 0.0f));
-                        serpentsProjectile.setDeltaMovement(dir.add(
-                                (context.player().getRandom().nextFloat() -0.5f) * disp,
-                                (context.player().getRandom().nextFloat() -0.5f) * disp,
-                                (context.player().getRandom().nextFloat() -0.5f) * disp
-                        ).scale(speed)
-                        );
-
-                        context.player().level().addFreshEntity(serpentsProjectile);
+                    if (payload.modifySky())
+                        zregos.wantsToModifSky = true;
+                    else {
+                        if (!payload.active())
+                            zregos.wantsToModifSky = false;
+                        zregos.wantsToLaser = payload.active();
                     }
+                }catch (Exception e) {
+                    System.out.println("Couldn't find zregos to render laser");
+                }
+            });
+        });
+
+        ClientPlayNetworking.registerGlobalReceiver(PlayZregosLaserSoundC2S.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                context.client().player.playSound(ModSounds.ZREGOS_LASER, 10, 1.5f);
+
+            });
+        });
+
+        ClientPlayNetworking.registerGlobalReceiver(ShakeLaserS2C.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                ScreenShakeHandler.beginShake(payload.amp(), 4);
+            });
+        });
+
+        ClientPlayNetworking.registerGlobalReceiver(ZregosMinionsSkyboxS2C.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                ArthaDimensionHandler.setAmp(0.0f);
+                ArthaDimensionHandler.setColor(payload.color());
+                ArthaDimensionHandler.setClientSkyType(StellariaSkyboxTypes.MINIONS);
+            });
+        });
+
+        ClientPlayNetworking.registerGlobalReceiver(IdleSkyboxS2C.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                ArthaDimensionHandler.setClientSkyType(StellariaSkyboxTypes.IDLE);
+            });
+        });
+
+        ClientPlayNetworking.registerGlobalReceiver(BlackHoleShaderS2C.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                ArthaDimensionHandler.setTranzProg(payload.tranzProg());
+                ArthaDimensionHandler.setSphereRadius(payload.sphereRadius());
+                ArthaDimensionHandler.setSpherePos(new Vec3(payload.x(), payload.y(), payload.z()));
+            });
+        });
+
+        ClientPlayNetworking.registerGlobalReceiver(StellarEventHudSwitchS2C.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                ArthaHudHandler.setAlive(payload.alive());
+                ArthaHudHandler.setIntermision(payload.intermision());
+                ArthaHudHandler.setToSpawn(payload.toSpawn());
+                ArthaHudHandler.setWave(payload.wave());
+                switch (payload.onOffIdle()){
+                    case 0 -> ArthaHudHandler.beginTicker();
+                    case 1 -> ArthaHudHandler.endTicker();
                 }
 
             });
         });
 
-        ServerPlayNetworking.registerGlobalReceiver(SendHomeC2S.ID, (payload, context) -> {
-            context.server().execute(() -> {
-                ServerPlayer player = context.player();
-                StellarEventHandler.cancelEvent(context.player().level());
-
-                BlockPos spawnPos = player.getRespawnPosition();
-                ResourceKey<Level> spawnDim = player.getRespawnDimension();
-                float spawnAngle = player.getRespawnAngle();
-
-                if (spawnPos == null) {
-                    ServerLevel overworld = player.server.overworld();
-                    spawnPos = overworld.getSharedSpawnPos();
-                    spawnDim = Level.OVERWORLD;
-                    spawnAngle = overworld.getSharedSpawnAngle();
-                }
-
-                ServerLevel spawnLevel = player.server.getLevel(spawnDim);
-                player.teleportTo(spawnLevel,
-                        spawnPos.getX() + 0.5f,
-                        spawnPos.getY(),
-                        spawnPos.getZ() + 0.5f,
-                        Set.of(),
-                        spawnAngle,
-                        0.0f
-                );
-                List<Item> weaponPool = List.of(
-                        ModItems.SERPENTS_BLADE,
-                        ModItems.STAFF_OF_FURY,
-                        ModItems.CELESTIAL_SHIELD,
-                        ModItems.COSMIC_BOW
-                );
-
-                Item weapon = weaponPool.get(player.getRandom().nextInt(weaponPool.size()));
-                ItemStack weaponStack = new ItemStack(weapon, 1);
-
-                int macesCount = player.getRandom().nextInt(33) + 32;
-                ItemStack macesStack = new ItemStack(ModBlocks.ZREGOS_MACE_BLOCK, macesCount);
-
-                ItemEntity weaponItem = new ItemEntity(spawnLevel, spawnPos.getX(), spawnPos.getY(), spawnPos.getZ(), weaponStack);
-                ItemEntity macesItem = new ItemEntity(spawnLevel, spawnPos.getX(), spawnPos.getY(), spawnPos.getZ(), macesStack);
-
-                spawnLevel.addFreshEntity(weaponItem);
-                spawnLevel.addFreshEntity(macesItem);
+        ClientPlayNetworking.registerGlobalReceiver(BeginEndAnimS2C.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                System.out.println("TIME TO GO");
+                ArthaHudHandler.setTimeToGo(true);
             });
         });
 
+        ClientPlayNetworking.registerGlobalReceiver(SendEnemySpawnTimerC2S.ID, (payload, context) -> {
+            context.client().execute(() -> {
+
+            });
+        });
     }
 }

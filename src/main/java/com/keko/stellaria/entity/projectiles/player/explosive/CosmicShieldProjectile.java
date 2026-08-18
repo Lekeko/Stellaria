@@ -1,9 +1,6 @@
 package com.keko.stellaria.entity.projectiles.player.explosive;
 
-import com.keko.stellaria.entity.ModProjectiles;
-import com.keko.stellaria.entity.projectiles.player.melee.MeleeSlash;
 import com.keko.stellaria.helper.SpaceHelpers;
-import com.keko.stellaria.sounds.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -12,7 +9,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;

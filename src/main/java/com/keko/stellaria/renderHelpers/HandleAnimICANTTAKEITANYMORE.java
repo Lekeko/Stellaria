@@ -14,6 +14,8 @@ public class HandleAnimICANTTAKEITANYMORE{
     public static float zLean = 0;
     public static float zImpulse = 0;
     //if anyone reads this, those impulses values are here because minecraft sync is crap, dont ask just look at the name of the class
+    //Aug. me : I dont know wtf happened the line above, i cant remember and i cant be bothered to remember so it was most likely a skill issue
+    //FUCK YOU INTELLIJ WITH UR AUTOCORRECT IM NOT PUTTING THE ` SYMBOL I COULDNT CARE LESS
 
 
     public static void lean(AbstractClientPlayer abstractClientPlayer, float f, float g, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, CallbackInfo ci) {

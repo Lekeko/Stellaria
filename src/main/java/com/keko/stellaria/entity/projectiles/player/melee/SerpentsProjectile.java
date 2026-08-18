@@ -1,10 +1,8 @@
 package com.keko.stellaria.entity.projectiles.player.melee;
 
-import com.keko.stellaria.entity.boss.zregos.Zregos;
 import com.keko.stellaria.helper.SpaceHelpers;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.monster.Monster;

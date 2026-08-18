@@ -1,7 +1,6 @@
 package com.keko.stellaria.entity.boss.minions.zregos.client.Crystalius;
 
 import com.keko.stellaria.entity.boss.minions.zregos.Crystalius;
-import com.keko.stellaria.entity.boss.minions.zregos.client.CosmicSpider.CosmicSpiderModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -12,7 +11,6 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 import software.bernie.geckolib.cache.object.BakedGeoModel;

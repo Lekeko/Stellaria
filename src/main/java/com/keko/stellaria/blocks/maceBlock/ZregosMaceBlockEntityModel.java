@@ -1,7 +1,6 @@
 package com.keko.stellaria.blocks.maceBlock;
 
 import com.keko.stellaria.Stellaria;
-import com.keko.stellaria.blocks.portal.DraconicCrystalBlockEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;
 

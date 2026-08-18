@@ -1,7 +1,6 @@
 package com.keko.stellaria.entity.projectiles.player.ranged;
 
 import com.keko.stellaria.helper.SpaceHelpers;
-import com.keko.stellaria.sounds.ModSounds;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;

@@ -12,7 +12,6 @@ import com.keko.stellaria.entity.projectiles.boss.zregos.ZregosGhost;
 import com.keko.stellaria.entity.projectiles.boss.zregos.ZregosProjectile;
 import com.keko.stellaria.helper.Vec3Helper;
 import com.keko.stellaria.sounds.ModSounds;
-import net.fabricmc.loader.impl.lib.sat4j.core.Vec;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;

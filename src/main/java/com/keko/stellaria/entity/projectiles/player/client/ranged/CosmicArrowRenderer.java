@@ -1,8 +1,5 @@
 package com.keko.stellaria.entity.projectiles.player.client.ranged;
 
-import com.keko.stellaria.entity.projectiles.player.client.melee.MeleeSlashModel;
-import com.keko.stellaria.entity.projectiles.player.melee.MeleeSlash;
-import com.keko.stellaria.entity.projectiles.player.melee.SerpentsProjectile;
 import com.keko.stellaria.entity.projectiles.player.ranged.CosmicArrow;
 import com.keko.stellaria.world.dimension.ModDimensions;
 import com.mojang.blaze3d.systems.RenderSystem;

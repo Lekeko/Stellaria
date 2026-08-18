@@ -1,7 +1,6 @@
 package com.keko.stellaria.items.stellariaWeaponTypes.zregos.cosmicBow;
 
 import com.keko.stellaria.entity.ModProjectiles;
-import com.keko.stellaria.entity.decour.zregosBoulders.ZregosBoulderNormal;
 import com.keko.stellaria.entity.projectiles.player.ranged.CosmicArrow;
 import com.keko.stellaria.items.stellariaWeaponTypes.StellarRangedWeapon;
 import com.keko.stellaria.sounds.ModSounds;
@@ -11,7 +10,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;

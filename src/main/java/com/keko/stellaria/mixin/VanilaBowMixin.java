@@ -1,4 +1,5 @@
 package com.keko.stellaria.mixin;
+
 import com.keko.stellaria.entity.ModProjectiles;
 import com.keko.stellaria.entity.projectiles.player.ranged.CosmicBolt;
 import com.keko.stellaria.world.dimension.ModDimensions;
@@ -8,8 +9,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -19,7 +18,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import java.util.List;
+
 import static net.minecraft.world.item.BowItem.getPowerForTime;
 
 @Mixin(BowItem.class)

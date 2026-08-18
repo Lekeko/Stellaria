@@ -1,8 +1,6 @@
 package com.keko.stellaria.items.stellariaWeaponTypes.zregos.celestialShield;
 
 import com.keko.stellaria.component.ModDataComponentTypes;
-import com.keko.stellaria.items.stellariaWeaponTypes.zregos.cosmicBow.CosmicBow;
-import com.keko.stellaria.items.stellariaWeaponTypes.zregos.cosmicBow.CosmicBowRenderer;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -17,7 +15,10 @@ import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.client.GeoRenderProvider;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.animation.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.function.Consumer;

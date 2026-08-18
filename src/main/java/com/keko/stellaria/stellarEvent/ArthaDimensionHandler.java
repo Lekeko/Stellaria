@@ -1,13 +1,11 @@
 package com.keko.stellaria.stellarEvent;
 
-import com.keko.stellaria.Stellaria;
 import com.keko.stellaria.packet.BlackHoleShaderS2C;
 import com.keko.stellaria.packet.IdleSkyboxS2C;
 import com.keko.stellaria.packet.ZregosMinionsSkyboxS2C;
 import com.keko.stellaria.shader.ClientShaderHandler;
 import foundry.veil.api.client.util.Easing;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.fabricmc.loader.impl.lib.sat4j.core.Vec;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;

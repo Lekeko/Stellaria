@@ -1,7 +1,6 @@
 package com.keko.stellaria.entity.projectiles.player.client.melee;
 
 import com.keko.stellaria.Stellaria;
-import com.keko.stellaria.entity.projectiles.player.melee.MeleeSlash;
 import com.keko.stellaria.entity.projectiles.player.melee.SerpentsProjectile;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;
