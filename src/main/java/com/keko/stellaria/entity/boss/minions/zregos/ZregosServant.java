@@ -24,6 +24,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import org.joml.Vector3f;
 import org.joml.Vector3fc;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -207,8 +208,13 @@ public class ZregosServant extends Monster implements GeoEntity {
             emitter.setCount(1);
             emitter.setRate(100);
             Vector3fc initialDirection = entity.getViewVector(1.0f).add(rx, ry, rz).toVector3f();
-            emitter.setParticleSettings(new ParticleSettings(1.0f, 1.2f, 2, 20, 1.0f,
-                    initialDirection, false, false, true, true, true));
+            Vector3fc initialDirectionVariation = new Vector3f(1.0f, 1.0f, 1.0f);
+            Vector3fc initialRoation = new Vector3f(0.0f, 0.0f, 0.0f);
+            Vector3fc initialRoationVariation = new Vector3f(0.0f, 0.0f, 0.0f);
+
+            emitter.setParticleSettings(new ParticleSettings(10.0f, 1.0f, 2.0f, 1.0f, 20, 10,
+                    initialDirection, true, initialDirectionVariation, initialRoation, false, initialRoationVariation, true, true, true));
+            manager.addParticleSystem(emitter);
             manager.addParticleSystem(emitter);
         } catch (Exception ignored) {
 

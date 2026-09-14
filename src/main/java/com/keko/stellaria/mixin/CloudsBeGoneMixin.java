@@ -21,7 +21,7 @@ public class CloudsBeGoneMixin {
 
     @Inject(method = "renderClouds", at = @At("HEAD"), cancellable = true)
     private void iWillDisableThisByMyselfBecauseIKnowPeopleWillReportITASANISSUE(PoseStack poseStack, Matrix4f matrix4f, Matrix4f matrix4f2, float f, double d, double e, double g, CallbackInfo ci){
-        if (this.level != null && this.level.dimension().equals(ModDimensions.ARTHA_LEVEL_KEY)){
+        if (this.level != null && (this.level.dimension().equals(ModDimensions.ARTHA_LEVEL_KEY) || this.level.dimension().equals(ModDimensions.EBONY_LEVEL_KEY))){
             ci.cancel();
         }
     }

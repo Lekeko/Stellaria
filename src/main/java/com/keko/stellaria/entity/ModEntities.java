@@ -1,6 +1,10 @@
 package com.keko.stellaria.entity;
 
 import com.keko.stellaria.Stellaria;
+import com.keko.stellaria.entity.boss.einfarbig.EinfarbigStatue;
+import com.keko.stellaria.entity.boss.minions.einfarbig.Messier;
+import com.keko.stellaria.entity.boss.minions.einfarbig.StarPhantom;
+import com.keko.stellaria.entity.boss.minions.einfarbig.VoidDealer;
 import com.keko.stellaria.entity.boss.minions.zregos.CosmicSpider;
 import com.keko.stellaria.entity.boss.minions.zregos.Crystalius;
 import com.keko.stellaria.entity.boss.minions.zregos.ZregosServant;
@@ -40,7 +44,6 @@ public class ModEntities {
             BuiltInRegistries.ENTITY_TYPE, Stellaria.id("zregos_servant"),
             EntityType.Builder.of(ZregosServant::new, MobCategory.MONSTER).sized(9.0f, 9.0f).build());
 
-    //TODO Add einferbig
 
 
     //decour
@@ -61,6 +64,23 @@ public class ModEntities {
             BuiltInRegistries.ENTITY_TYPE, Stellaria.id("zregos_mace"),
             EntityType.Builder.of(ZregosMace::new, MobCategory.MISC).sized(5f, 5f).build());
 
+    //EINFERBIG
+
+    public static final EntityType<EinfarbigStatue> EINFARBIG_STATUE = Registry.register(
+            BuiltInRegistries.ENTITY_TYPE, Stellaria.id("einfarbig_statue"),
+            EntityType.Builder.of(EinfarbigStatue::new, MobCategory.MISC).sized(1.0f, 1.0f).build());
+
+    public static final EntityType<StarPhantom> STAR_PHANTOM = Registry.register(
+            BuiltInRegistries.ENTITY_TYPE, Stellaria.id("star_phantom"),
+            EntityType.Builder.of(StarPhantom::new, MobCategory.MONSTER).sized(10.0f, 10.0f).build());
+
+    public static final EntityType<VoidDealer> VOID_DEALER = Registry.register(
+            BuiltInRegistries.ENTITY_TYPE, Stellaria.id("void_dealer"),
+            EntityType.Builder.of(VoidDealer::new, MobCategory.MONSTER).sized(8.0f, 8.0f).build());
+
+    public static final EntityType<Messier> MESSIER = Registry.register(
+            BuiltInRegistries.ENTITY_TYPE, Stellaria.id("messier"),
+            EntityType.Builder.of(Messier::new, MobCategory.MONSTER).sized(8.0f, 8.0f).build());
 
     public static void init(){}
 

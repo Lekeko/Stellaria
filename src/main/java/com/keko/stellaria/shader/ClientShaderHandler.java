@@ -108,4 +108,48 @@ public class ClientShaderHandler {
         ClientShaderRenderer.createAndRunShader("black_hole_menu", floatHashMap, vec3HashMap, null, null);
 
     }
+
+    //UPDSATE
+
+    public static void renderDiggingSite(float size, Vec3 boxPos){
+        HashMap<String, Float> floatHashMap = new HashMap<>();
+        floatHashMap.put("size", size);
+
+        HashMap<String, Vec3> vec3HashMap = new HashMap<>();
+        vec3HashMap.put("cubePos", boxPos);
+
+        ClientShaderRenderer.createAndRunShader("digging_site", floatHashMap, vec3HashMap, null, null);
+
+    }
+
+    public static void renderVoidCubes(){
+        ClientShaderRenderer.createAndRunShader("void_vortex", null, null, null, null);
+
+    }
+
+    public static void renderEbonyidleSkybox(){
+        ClientShaderRenderer.createAndRunShader("ebony_idle_skybox", null, null, null, null);
+
+    }
+
+    public static void renderEbonyEnemiesSkybox(){
+        ClientShaderRenderer.createAndRunShader("ebony_enemies_skybox", null, null, null, null);
+    }
+
+    public static void renderEiniphase1Skybox(){
+        ClientShaderRenderer.createAndRunShader("einfarbig_skybox", null, null, null, null);
+    }
+
+    public static void renderEiniphase2Skybox(){
+        ClientShaderRenderer.createAndRunShader("einfarbig_skybox_mono", null, null, null, null);
+    }
+
+    public static void renderMessier(Vec3 pos, float size){
+        HashMap<String, Float> floatHashMap = new HashMap<>();
+        floatHashMap.put("size", size);
+
+        HashMap<String, Vec3> vec3HashMap = new HashMap<>();
+        vec3HashMap.put("pos", pos);
+        ClientShaderRenderer.createAndRunShader("messier", floatHashMap, vec3HashMap, null, null);
+    }
 }

@@ -1,9 +1,10 @@
-package com.keko.stellaria.stellarEvent;
+package com.keko.stellaria.stellarEvent.artha;
 
 import com.keko.stellaria.packet.BlackHoleShaderS2C;
 import com.keko.stellaria.packet.IdleSkyboxS2C;
 import com.keko.stellaria.packet.ZregosMinionsSkyboxS2C;
 import com.keko.stellaria.shader.ClientShaderHandler;
+import com.keko.stellaria.stellarEvent.StellariaSkyboxTypes;
 import foundry.veil.api.client.util.Easing;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.server.level.ServerPlayer;
@@ -59,7 +60,7 @@ public class ArthaDimensionHandler {
 
     //Some client side shit
 
-    private static StellariaSkyboxTypes clientSkyType = StellariaSkyboxTypes.IDLE;
+    private static StellariaSkyboxTypes clientSkyType = StellariaSkyboxTypes.IDLE_ARTHA;
     private static float amp = 0;
     private static float color = 0;
     private static float tranzProg = 0;
@@ -92,11 +93,11 @@ public class ArthaDimensionHandler {
 
     public static void handleSkybox() {
         switch (clientSkyType){
-            case IDLE -> {
+            case IDLE_ARTHA -> {
                 ClientShaderHandler.renderIdleSky();
                 ClientShaderHandler.renderBlackHole(tranzProg, sphereRadius, spherePos);
             }
-            case MINIONS -> ClientShaderHandler.renderZregosMinionsSkybox(amp, color);
+            case MINIONS_ARTHA -> ClientShaderHandler.renderZregosMinionsSkybox(amp, color);
            // case BOSS -> int sixseven;
         }
 

@@ -1,4 +1,4 @@
-package com.keko.stellaria.stellarEvent;
+package com.keko.stellaria.stellarEvent.artha;
 
 import com.keko.stellaria.entity.ModEntities;
 import com.keko.stellaria.entity.boss.minions.zregos.CosmicSpider;

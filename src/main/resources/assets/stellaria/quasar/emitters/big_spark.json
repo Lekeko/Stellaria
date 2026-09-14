@@ -1,0 +1,25 @@
+{
+  "max_lifetime": 100,
+  "loop": false,
+  "rate": 1,
+  "count": 10,
+  "emitter_settings": {
+    "shape": [
+      {
+        "shape": "veil:sphere",
+        "dimensions": [
+          600,600,600
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "from_surface": false
+      }
+    ],
+    "particle_settings": "stellaria:big_spark",
+    "force_spawn": true
+  },
+  "particle_data": "stellaria:big_spark"
+}

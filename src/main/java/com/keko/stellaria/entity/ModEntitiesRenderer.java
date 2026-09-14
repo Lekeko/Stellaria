@@ -1,8 +1,13 @@
 package com.keko.stellaria.entity;
 
 import com.keko.stellaria.blocks.ModBlockEntity;
+import com.keko.stellaria.blocks.borderBreaker.BorderBreakerEntityRenderer;
 import com.keko.stellaria.blocks.maceBlock.ZregosMaceBlockEntityRenderer;
 import com.keko.stellaria.blocks.portal.DraconicCrystalBlockEntityRenderer;
+import com.keko.stellaria.entity.boss.einfarbig.client.EinfarbigStatueRenderer;
+import com.keko.stellaria.entity.boss.minions.einfarbig.client.Messier.MessierRenderer;
+import com.keko.stellaria.entity.boss.minions.einfarbig.client.StarPhantom.StarPhantomRenderer;
+import com.keko.stellaria.entity.boss.minions.einfarbig.client.VoidDealer.VoidDealerRenderer;
 import com.keko.stellaria.entity.boss.zregos.client.renderers.ZregosBodyRenderer;
 import com.keko.stellaria.entity.boss.zregos.client.renderers.ZregosRenderer;
 import com.keko.stellaria.entity.boss.zregos.client.renderers.ZregosTailRenderer;
@@ -60,5 +65,15 @@ public class ModEntitiesRenderer {
 
         BlockEntityRenderers.register(ModBlockEntity.DRACONIC_CRYSTAL_BLOCK_ENTITY, DraconicCrystalBlockEntityRenderer::new);
         BlockEntityRenderers.register(ModBlockEntity.ZREGOS_MACE_BLOCK_ENTITY, ZregosMaceBlockEntityRenderer::new);
+
+        //UPDATE
+        EntityRendererRegistry.register(ModEntities.EINFARBIG_STATUE, EinfarbigStatueRenderer::new);
+
+        EntityRendererRegistry.register(ModEntities.STAR_PHANTOM, StarPhantomRenderer::new);
+        EntityRendererRegistry.register(ModEntities.VOID_DEALER, VoidDealerRenderer::new);
+        EntityRendererRegistry.register(ModEntities.MESSIER, MessierRenderer::new);
+
+
+        BlockEntityRenderers.register(ModBlockEntity.BORDER_BREAKER_ENTITY_BLOCK_ENTITY, BorderBreakerEntityRenderer::new);
     }
 }

@@ -14,8 +14,9 @@ import com.keko.stellaria.packet.StellarEventHudSwitchS2C;
 import com.keko.stellaria.packet.networking.ModMessagesServer;
 import com.keko.stellaria.particles.ModParticles;
 import com.keko.stellaria.sounds.ModSounds;
-import com.keko.stellaria.stellarEvent.ArthaDimensionHandler;
-import com.keko.stellaria.stellarEvent.StellarEventHandler;
+import com.keko.stellaria.stellarEvent.artha.ArthaDimensionHandler;
+import com.keko.stellaria.stellarEvent.artha.StellarEventHandler;
+import com.keko.stellaria.stellarEvent.ebony.EbonyDimensionHandler;
 import com.keko.stellaria.world.dimension.ModDimensions;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
@@ -86,24 +87,32 @@ public class Stellaria implements ModInitializer {
         });
 
         ServerTickEvents.START_SERVER_TICK.register(server -> {
-            Level level = server.getLevel(ModDimensions.ARTHA_LEVEL_KEY);
-            if (level == null) return;
+            Level level_artha = server.getLevel(ModDimensions.ARTHA_LEVEL_KEY);
+            if (level_artha == null) return;
 
-            if (!level.isClientSide){
-                if (!level.players().isEmpty())
-                    ArthaDimensionHandler.tick(level);
+            if (!level_artha.isClientSide){
+                if (!level_artha.players().isEmpty())
+                    ArthaDimensionHandler.tick(level_artha);
                 else {
-                    StellarEventHandler.cancelEvent(level);
+                    StellarEventHandler.cancelEvent(level_artha);
                 }
 
                 if (StellarEventHandler.getStellarEventInstance() == null)
-                    for (Player player : level.players())
+                    for (Player player : level_artha.players())
                         ServerPlayNetworking.send((ServerPlayer) player, new StellarEventHudSwitchS2C(
                                 1,
                                 0,0,0,0
 
                         ));
             }
+            Level level_ebony = server.getLevel(ModDimensions.EBONY_LEVEL_KEY);
+            if (level_ebony == null) return;
+            if (!level_artha.isClientSide){
+                if (!level_ebony.players().isEmpty())
+                    EbonyDimensionHandler.tick(level_ebony);
+                else EbonyDimensionHandler.remove(level_ebony);
+            }
+
         });
 
 

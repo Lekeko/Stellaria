@@ -1,0 +1,25 @@
+{
+  "type": "stellaria:ebony",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "stellaria:ebony",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biomes": [
+        {
+          "biome": "stellaria:isla",
+          "parameters": {
+            "temperature": 0.5,
+            "humidity": 0.3,
+            "continentalness": 0.2,
+            "erosion": 0.1,
+            "weirdness": -0.3,
+            "depth": 0,
+            "offset": 0
+          }
+        }
+      ],
+      "biome": "stellaria:isla"
+    }
+  }
+}

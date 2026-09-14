@@ -1,0 +1,14 @@
+{
+  "vertex": "veil:blit_screen",
+  "fragment": "stellaria:messier",
+  "textures": {
+    "OutsideTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/entity/messier/out.png"
+    },
+    "InsideTexture": {
+      "type": "location",
+      "location": "stellaria:textures/shader/entity/messier/in.png"
+    }
+  }
+}

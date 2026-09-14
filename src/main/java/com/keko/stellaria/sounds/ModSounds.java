@@ -13,6 +13,8 @@ public class ModSounds {
     public static final SoundEvent ZREGOS_BOULDERS_BREAK =register("zregos_boulders_break");
     public static final SoundEvent ZREGOS_BOULDERS_SUMMON =register("zregos_boulders_summon");
     public static final SoundEvent COSMIC_ARROW_SHOT =register("cosmic_arrow_shot");
+    public static final SoundEvent DRILLING =register("drilling");
+    public static final SoundEvent DRILL_BREAK =register("drill_break");
 
     private static SoundEvent register(String path) {
         ResourceLocation identifier = Stellaria.id(path);

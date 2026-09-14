@@ -15,6 +15,12 @@ public class ModDimensions {
     public static final ResourceKey<DimensionType> ARTHA_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
             Stellaria.id("artha"));
 
+    public static final ResourceKey<LevelStem> EBONY_KEY = ResourceKey.create(Registries.LEVEL_STEM,
+            Stellaria.id("ebony"));
+    public static final ResourceKey<Level> EBONY_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
+            Stellaria.id("ebony"));
+    public static final ResourceKey<DimensionType> EBONY_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
+            Stellaria.id("ebony"));
 
     public static void init() {}
 }

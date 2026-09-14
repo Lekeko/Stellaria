@@ -15,6 +15,7 @@ import net.minecraft.util.Mth;
 import java.awt.*;
 import java.util.Random;
 
+
 public class ArthaHudHandler {
     private static float ticker = -1;
     private static int wave = 0;

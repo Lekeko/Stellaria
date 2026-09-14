@@ -28,7 +28,7 @@ public abstract class KeybindingsListeners {
         float leftImpulse = input.leftImpulse;
         boolean jump = input.jumping;
         boolean shift = input.shiftKeyDown;
-        if (client.player.level().dimension() == ModDimensions.ARTHA_LEVEL_KEY)
+        if (client.player.level().dimension() == ModDimensions.ARTHA_LEVEL_KEY || client.player.level().dimension() == ModDimensions.EBONY_LEVEL_KEY)
             ClientPlayNetworking.send(new ArthaMovementC2S(forwardImpulse, leftImpulse, jump, shift));
     }
 
@@ -39,7 +39,7 @@ public abstract class KeybindingsListeners {
         if (swingCurrentCooldown > 0)
             swingCurrentCooldown--;
 
-        if (client.player.level().dimension() == ModDimensions.ARTHA_LEVEL_KEY){
+        if (client.player.level().dimension() == ModDimensions.ARTHA_LEVEL_KEY || client.player.level().dimension() == ModDimensions.EBONY_LEVEL_KEY){
             if (client.options.keyAttack.isDown() && swingCurrentCooldown <= 0 && (client.player.getMainHandItem().getItem() instanceof SwordItem heldItem)){ //dafuq is a pattern variable intellij???
                 int sword = StellariaConstants.VANILLA.ordinal();
                 swingCurrentCooldown = swingCooldown;

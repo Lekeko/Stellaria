@@ -1,0 +1,9 @@
+{
+  "stages": [
+    {
+      "type": "veil:blit",
+      "shader": "stellaria:void_vortex",
+      "in": "minecraft:main"
+    }
+  ]
+}

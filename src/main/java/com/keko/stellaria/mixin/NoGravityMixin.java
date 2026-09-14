@@ -20,7 +20,7 @@ public class NoGravityMixin {
 
 	@Inject(at = @At("HEAD"), method = "getGravity", cancellable = true)
 	private void setNoGravityInArtha(CallbackInfoReturnable<Double> cir) {
-        if (entity.level().dimension() == ModDimensions.ARTHA_LEVEL_KEY) {
+        if (entity.level().dimension() == ModDimensions.ARTHA_LEVEL_KEY || entity.level().dimension() == ModDimensions.EBONY_LEVEL_KEY) {
             cir.setReturnValue(0.0d);
             cir.cancel();
         }

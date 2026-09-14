@@ -1,6 +1,7 @@
 package com.keko.stellaria.blocks;
 
 import com.keko.stellaria.Stellaria;
+import com.keko.stellaria.blocks.borderBreaker.BorderBreaker;
 import com.keko.stellaria.blocks.maceBlock.ZregosMaceBlock;
 import com.keko.stellaria.blocks.portal.DraconicCrystalBlock;
 import com.keko.stellaria.items.ModItems;
@@ -27,6 +28,13 @@ public class ModBlocks {
                     .lightLevel(state -> 12)
                     .noOcclusion()
     ), "zregos_mace_block", new Item.Properties());
+
+    public static final BorderBreaker BORDER_BREAKER = (BorderBreaker) registerBlock(new BorderBreaker(
+            BlockBehaviour.Properties.of()
+                    .strength(3.0f, 10.0f)
+                    .lightLevel(state -> 12)
+                    .noOcclusion()
+    ), "border_breaker", new Item.Properties());
 
     private static Block registerBlock(Block block, String path, Item.Properties settings) {
         ModItems.registerItem(new BlockItem(block, settings), path);

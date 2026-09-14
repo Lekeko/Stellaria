@@ -2,6 +2,7 @@ package com.keko.stellaria.blocks;
 
 
 import com.keko.stellaria.Stellaria;
+import com.keko.stellaria.blocks.borderBreaker.BorderBreakerEntity;
 import com.keko.stellaria.blocks.maceBlock.ZregosMaceBlockEntity;
 import com.keko.stellaria.blocks.portal.DraconicCrystalBlockEntity;
 import net.minecraft.core.Registry;
@@ -16,6 +17,9 @@ public class ModBlockEntity {
                     .build());
     public static final BlockEntityType<ZregosMaceBlockEntity> ZREGOS_MACE_BLOCK_ENTITY = register("zregos_mace_block",
             BlockEntityType.Builder.of(ZregosMaceBlockEntity::new, ModBlocks.ZREGOS_MACE_BLOCK)
+                    .build());
+    public static final BlockEntityType<BorderBreakerEntity> BORDER_BREAKER_ENTITY_BLOCK_ENTITY = register("border_breaker",
+            BlockEntityType.Builder.of(BorderBreakerEntity::new, ModBlocks.BORDER_BREAKER)
                     .build());
 
 

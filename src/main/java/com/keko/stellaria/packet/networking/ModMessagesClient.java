@@ -7,7 +7,7 @@ import com.keko.stellaria.packet.*;
 import com.keko.stellaria.renderHelpers.ZregosBite;
 import com.keko.stellaria.screenVfx.screenShake.ScreenShakeHandler;
 import com.keko.stellaria.sounds.ModSounds;
-import com.keko.stellaria.stellarEvent.ArthaDimensionHandler;
+import com.keko.stellaria.stellarEvent.artha.ArthaDimensionHandler;
 import com.keko.stellaria.screenVfx.stellarHud.ArthaHudHandler;
 import com.keko.stellaria.stellarEvent.StellariaSkyboxTypes;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
@@ -71,13 +71,13 @@ public class ModMessagesClient {
             context.client().execute(() -> {
                 ArthaDimensionHandler.setAmp(0.0f);
                 ArthaDimensionHandler.setColor(payload.color());
-                ArthaDimensionHandler.setClientSkyType(StellariaSkyboxTypes.MINIONS);
+                ArthaDimensionHandler.setClientSkyType(StellariaSkyboxTypes.MINIONS_ARTHA);
             });
         });
 
         ClientPlayNetworking.registerGlobalReceiver(IdleSkyboxS2C.ID, (payload, context) -> {
             context.client().execute(() -> {
-                ArthaDimensionHandler.setClientSkyType(StellariaSkyboxTypes.IDLE);
+                ArthaDimensionHandler.setClientSkyType(StellariaSkyboxTypes.IDLE_ARTHA);
             });
         });
 
@@ -109,6 +109,7 @@ public class ModMessagesClient {
             });
         });
 
+        //TODO after eini make this
         ClientPlayNetworking.registerGlobalReceiver(SendEnemySpawnTimerC2S.ID, (payload, context) -> {
             context.client().execute(() -> {
 

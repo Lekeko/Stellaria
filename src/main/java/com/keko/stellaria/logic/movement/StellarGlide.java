@@ -6,7 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 
-public abstract class ArthaGlide {
+public abstract class StellarGlide {
     private static boolean wasSprinting = false;
     private static float dodgeTimer = 0;
 
@@ -42,11 +42,13 @@ public abstract class ArthaGlide {
 
         float speed= 3.3f;
 
+        if (player.isSprinting())
+            speed *=2.5f;
+
         deltaX *=speed;
         deltaY *=speed;
         deltaZ *=speed;
 
-        float ticker = Minecraft.getInstance().getTimer().getGameTimeDeltaTicks() * 30;
 
         float impulseStr = 80;
         if (deltaZ != 0) {
@@ -74,15 +76,12 @@ public abstract class ArthaGlide {
             player.setDeltaMovement(0.0f,0.0f,0.0f);
         }
 
+
     }
 
     private static void dodgePlayer(Player player,double deltaX, double deltaZ) {
         player.push(deltaX, 0, deltaZ);
         dodgeTimer = -30;
-    }
-
-    private static void dodgePlayer(float forwardImpulse) {
-
     }
 
 }

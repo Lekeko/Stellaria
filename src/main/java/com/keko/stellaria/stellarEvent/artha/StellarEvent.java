@@ -1,4 +1,4 @@
-package com.keko.stellaria.stellarEvent;
+package com.keko.stellaria.stellarEvent.artha;
 
 import net.minecraft.world.entity.LivingEntity;
 

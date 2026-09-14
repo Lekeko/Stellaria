@@ -11,9 +11,9 @@ import com.keko.stellaria.entity.projectiles.player.melee.MeleeSlash;
 import com.keko.stellaria.entity.projectiles.player.melee.SerpentsProjectile;
 import com.keko.stellaria.items.ModItems;
 import com.keko.stellaria.logic.StellariaConstants;
-import com.keko.stellaria.logic.movement.ArthaGlide;
+import com.keko.stellaria.logic.movement.StellarGlide;
 import com.keko.stellaria.packet.*;
-import com.keko.stellaria.stellarEvent.StellarEventHandler;
+import com.keko.stellaria.stellarEvent.artha.StellarEventHandler;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.core.BlockPos;
@@ -78,7 +78,7 @@ public class ModMessagesServer {
 
         ServerPlayNetworking.registerGlobalReceiver(ArthaMovementC2S.ID, (payload, context) -> {
             context.server().execute(() -> {
-                ArthaGlide.glidePLayer(context.player(), payload.forwardImpulse(), payload.leftImpulse(), payload.jump(), payload.shift());
+                StellarGlide.glidePLayer(context.player(), payload.forwardImpulse(), payload.leftImpulse(), payload.jump(), payload.shift());
             });
         });
         ServerPlayNetworking.registerGlobalReceiver(ResetShieldChargesC2S.ID, (payload, context) -> {
@@ -212,6 +212,5 @@ public class ModMessagesServer {
                 spawnLevel.addFreshEntity(macesItem);
             });
         });
-
     }
 }

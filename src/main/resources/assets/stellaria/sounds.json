@@ -29,5 +29,15 @@
     "sounds": [
       "stellaria:cosmic_arrow_shot"
     ]
+  },
+  "drilling": {
+    "sounds": [
+      "stellaria:drilling"
+    ]
+  },
+  "drill_break": {
+    "sounds": [
+      "stellaria:drill_break"
+    ]
   }
 }

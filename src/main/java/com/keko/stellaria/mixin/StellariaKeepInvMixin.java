@@ -8,14 +8,14 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Player.class)
-public class ArthaKeepInvMixin {
+public class StellariaKeepInvMixin {
 
 
 
     @Inject(method = "dropEquipment", at = @At("HEAD"), cancellable = true)
     private void stellaria$noEquipmentDrop(CallbackInfo ci) {
         Player player = ((Player) (Object) this);
-        if (player.level().dimension().equals(ModDimensions.ARTHA_LEVEL_KEY)) {
+        if (player.level().dimension().equals(ModDimensions.ARTHA_LEVEL_KEY) || player.level().dimension().equals(ModDimensions.EBONY_LEVEL_KEY)) {
             ci.cancel();
         }
     }

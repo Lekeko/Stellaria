@@ -1,0 +1,53 @@
+{
+  "render_style": "BILLBOARD",
+  "modules": [
+    {
+      "module": "veil:lightmap",
+      "block": "15728880",
+      "sky": "15728880"
+    },
+    {
+      "module": "rotation",
+      "x": "0",
+      "y": "0",
+      "z": "v.spin_rate = q.age < 1 ? math.random(20, 40) * (math.random(0, 1) < 0.5 ? -1 : 1) : v.spin_rate; return q.agePercent * v.spin_rate;"
+    },
+    {
+      "module": "size",
+      "size" : "math.sin(q.agePercent * 200)"
+    },
+    {
+      "module": "color",
+      "gradient": {
+        "rgb_points": [
+          {
+            "percent": 0,
+            "color": "0xFFFFFF"
+          },
+          {
+            "percent": 1,
+            "color": "0xFFFFFF"
+          }
+        ],
+        "alpha_points": [
+          {
+            "percent": 0,
+            "alpha": 1
+          },
+          {
+            "percent": 1,
+            "alpha": 0
+          }
+        ]
+      },
+      "interpolant": "q.agePercent"
+    }
+  ],
+  "sprite_data": {
+    "sprite": "stellaria:textures/particle/big_spark.png"
+  },
+  "additive": false,
+  "should_collide": false,
+  "face_velocity": false,
+  "velocity_stretch_factor": 1.0
+}
