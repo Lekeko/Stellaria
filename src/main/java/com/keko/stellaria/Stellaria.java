@@ -7,6 +7,7 @@ import com.keko.stellaria.effects.ModStatusEffects;
 import com.keko.stellaria.entity.ModEntities;
 import com.keko.stellaria.entity.ModEntitiesAttributes;
 import com.keko.stellaria.entity.ModProjectiles;
+import com.keko.stellaria.features.ModFeatures;
 import com.keko.stellaria.items.ModGroupItems;
 import com.keko.stellaria.items.ModItems;
 import com.keko.stellaria.logic.overrides.VanillaItemsOverride;
@@ -17,7 +18,9 @@ import com.keko.stellaria.sounds.ModSounds;
 import com.keko.stellaria.stellarEvent.artha.ArthaDimensionHandler;
 import com.keko.stellaria.stellarEvent.artha.StellarEventHandler;
 import com.keko.stellaria.stellarEvent.ebony.EbonyDimensionHandler;
+import com.keko.stellaria.world.ModBiomes;
 import com.keko.stellaria.world.dimension.ModDimensions;
+import com.keko.stellaria.world.gen.ModWorldGen;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -76,6 +79,9 @@ public class Stellaria implements ModInitializer {
         ModStatusEffects.init();
         ModGroupItems.init();
         ModDataComponentTypes.init();
+        ModFeatures.init();
+        ModBiomes.init();
+        ModWorldGen.init();
     }
 
     private void event(){

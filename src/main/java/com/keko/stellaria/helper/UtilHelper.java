@@ -30,4 +30,20 @@ public class UtilHelper {
                 (int) Mth.lerp(t, a.getAlpha(), b.getAlpha())
         );
     }
+
+    public static Player getPlayerTarget(Entity enemy, float maxDist){
+        Player target = null;
+        float finalDist = maxDist;
+        if (maxDist < 0) finalDist = Float.MAX_VALUE;
+
+        for (Player player : enemy.level().players()){
+            float curDist = player.distanceTo(enemy);
+            if (curDist < finalDist){
+                target = player;
+                finalDist = curDist;
+            }
+        }
+
+        return target;
+    }
 }

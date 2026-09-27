@@ -32,7 +32,7 @@ public class EinfarbigStatue extends Entity implements GeoEntity {
                     .setColor(88/255.0f, 28/255.0f, 66/255.0f)
                     .setSize(0.1, 0.1)
                     .setDistance(60.0f)
-                    .setInscatteringStrength(12.810f);
+                    .setInscatteringStrength(32.810f);
             areaLightData.getPosition().set(position().x, position().y + 30.0f, position().z);
             areaLightData.setAngle(1.0f);
             areaLightData.getOrientationMutable().set(Axis.XN.rotation(Mth.PI/2.0f));

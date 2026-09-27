@@ -22,6 +22,7 @@ public class EinfarbigStatueRenderer extends GeoEntityRenderer<EinfarbigStatue> 
     public void preRender(PoseStack poseStack, EinfarbigStatue animatable, BakedGeoModel model, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour) {
         super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);
         poseStack.scale(3.0f,3.0f,3.0f);
+
     }
 
     @Override
@@ -31,20 +32,24 @@ public class EinfarbigStatueRenderer extends GeoEntityRenderer<EinfarbigStatue> 
 
     @Override
     public void render(EinfarbigStatue entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
-        RenderSystem.disableCull();
         super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
+
+    }
+
+    @Override
+    public void renderFinal(PoseStack poseStack, EinfarbigStatue animatable, BakedGeoModel model, MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay, int colour) {
+        super.renderFinal(poseStack, animatable, model, bufferSource, buffer, partialTick, packedLight, packedOverlay, colour);
 
     }
 
     @Override
     public void postRender(PoseStack poseStack, EinfarbigStatue animatable, BakedGeoModel model, MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour) {
         super.postRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);
-        RenderSystem.disableCull();
     }
 
     @Override
     public @Nullable RenderType getRenderType(EinfarbigStatue animatable, ResourceLocation texture, @Nullable MultiBufferSource bufferSource, float partialTick) {
-        return RenderType.text(texture);
+        return RenderType.entityCutoutNoCull(texture);
     }
 
     @Override

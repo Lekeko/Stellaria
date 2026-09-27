@@ -1,6 +1,7 @@
 package com.keko.stellaria.helper;
 
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
 
@@ -35,5 +36,11 @@ public class Vec3Helper {
     }
 
 
-
+    public static Vec3 getRandomVec3(RandomSource random, float spread) {
+        return new Vec3(
+                (random.nextFloat() - .5f) * spread,
+                (random.nextFloat() - .5f) * spread,
+                (random.nextFloat() - .5f) * spread
+        );
+    }
 }

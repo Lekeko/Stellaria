@@ -10,7 +10,7 @@ import net.minecraft.world.level.Level;
 public class VanillaItemsOverride {
 
     public static void listen(Player player, Level world, InteractionHand hand) {
-        if (world.dimension() == ModDimensions.ARTHA_LEVEL_KEY){
+        if (world.dimension() == ModDimensions.ARTHA_LEVEL_KEY || world.dimension() == ModDimensions.EBONY_LEVEL_KEY){
             EndCrystalListener.listen(player, world, hand);
             CrystalListener.listen(player, world, hand);
         }

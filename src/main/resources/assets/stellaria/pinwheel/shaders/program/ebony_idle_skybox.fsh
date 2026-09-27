@@ -103,12 +103,12 @@ void main() {
             vec3 hitPointWorld = rayOrigin + rayDir * rayHit;
             float hitY = hitPointWorld.y - spherePos.y;
 
-            vec3 normal = normalize(hitPointWorld - spherePos) *rotatorLR(GameTime * pow(i*1, 2.9)) ;
+            vec3 normal = normalize(hitPointWorld - spherePos) * rotatorLR(GameTime * pow(i*1.2, 2.9));
             vec2 sphereTexture = sphereTexture(normal);
             vec4 actualSphereTexture;
             switch(i){
                 case 0 : actualSphereTexture = texture(StarTexture, sphereTexture); break;
-                case 1 : actualSphereTexture = texture(SoftTexture, sphereTexture); break;
+                case 1 : actualSphereTexture = texture(SoftTexture, sphereTexture) / ( max(0.01,pow(abs(normal.y), 0.8)) * 9); break;
             }
 
             fragColor += actualSphereTexture;

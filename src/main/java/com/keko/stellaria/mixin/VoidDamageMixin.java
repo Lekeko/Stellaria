@@ -22,8 +22,8 @@ public class VoidDamageMixin {
     private void checkForTp(CallbackInfo ci){
 
         if (livingEntity instanceof Player && !livingEntity.level().isClientSide){
-            if (livingEntity.getY() < -200 && livingEntity.level().dimension() == Level.OVERWORLD) {
-                if (livingEntity instanceof ServerPlayer serverPlayer) {
+            if (livingEntity instanceof ServerPlayer serverPlayer && livingEntity.level().dimension() == Level.OVERWORLD) {
+                if (livingEntity.getY() < -200) {
                     ServerLevel artha = livingEntity.getServer().getLevel(ModDimensions.EBONY_LEVEL_KEY);
 
                     if (artha != null) {
@@ -31,14 +31,12 @@ public class VoidDamageMixin {
                                 artha,
                                 0.0f, 2000.0d, 430.0f, 0.0f, 0.0f
                         );
+                        serverPlayer.setDeltaMovement(Vec3.ZERO);
+                        serverPlayer.hurtMarked = true;
                     }
-                }
-                livingEntity.setDeltaMovement(Vec3.ZERO);
-                livingEntity.hurtMarked = true;
+                }                                                                                                             ci.cancel(); //now why is this here you may ask
+                                                                                                                            //I am not obligated to answer that
             }
-            ci.cancel();
         }
-
     }
-
 }

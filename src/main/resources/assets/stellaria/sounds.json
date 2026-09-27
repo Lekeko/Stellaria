@@ -39,5 +39,18 @@
     "sounds": [
       "stellaria:drill_break"
     ]
+  },
+  "ebony_ambiance": {
+    "sounds": [
+      "stellaria:ebony_ambiance"
+    ]
+  },
+  "paper_hit": {
+    "sounds": [
+      "stellaria:paper_hit_1",
+      "stellaria:paper_hit_2",
+      "stellaria:paper_hit_3",
+      "stellaria:paper_hit_4"
+    ]
   }
 }

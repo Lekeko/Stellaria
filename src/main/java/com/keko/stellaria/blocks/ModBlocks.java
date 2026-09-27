@@ -10,6 +10,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class ModBlocks {
@@ -35,6 +36,14 @@ public class ModBlocks {
                     .lightLevel(state -> 12)
                     .noOcclusion()
     ), "border_breaker", new Item.Properties());
+
+    public static final Block VOID_STONE =  registerBlock(new Block(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)
+    ), "void_stone", new Item.Properties());
+
+    public static final Block VOID_LIGHTSTONE =  registerBlock(new Block(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE)
+    ), "void_lightstone", new Item.Properties());
 
     private static Block registerBlock(Block block, String path, Item.Properties settings) {
         ModItems.registerItem(new BlockItem(block, settings), path);

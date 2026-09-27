@@ -2,6 +2,7 @@ package com.keko.stellaria.entity;
 
 import com.keko.stellaria.Stellaria;
 import com.keko.stellaria.entity.projectiles.boss.zregos.*;
+import com.keko.stellaria.entity.projectiles.minions.einfarbig.playingCardProj.PlayingCardProjectile;
 import com.keko.stellaria.entity.projectiles.minions.zregos.ZregosServantProjectile;
 import com.keko.stellaria.entity.projectiles.player.explosive.CosmicShieldProjectile;
 import com.keko.stellaria.entity.projectiles.player.explosive.EndCrystalProjectile;
@@ -72,6 +73,12 @@ public class ModProjectiles {
     public static final EntityType<ZregosServantProjectile> ZREGOS_SERVANT_PROJECTILE = Registry.register(
             BuiltInRegistries.ENTITY_TYPE, Stellaria.id("zregos_servant_projectile"),
             EntityType.Builder.of(ZregosServantProjectile::new, MobCategory.MISC).sized(1.4f, 1.4f).build());
+
+    //Einfarbig
+
+    public static final EntityType<PlayingCardProjectile> PLAYING_CARD_PROJECTILE = Registry.register(
+            BuiltInRegistries.ENTITY_TYPE, Stellaria.id("playing_card_projectile"),
+            EntityType.Builder.of(PlayingCardProjectile::new, MobCategory.MISC).sized(1.0f, 1.2f).build());
 
 
     public static void init(){}

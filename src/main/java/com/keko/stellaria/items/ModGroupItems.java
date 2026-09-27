@@ -20,6 +20,8 @@ public class ModGroupItems {
                 entries.accept(ModItems.CELESTIAL_SHIELD);
                 entries.accept(ModBlocks.DRACONIC_CRYSTAL_BLOCK);
                 entries.accept(ModBlocks.ZREGOS_MACE_BLOCK);
+                entries.accept(ModBlocks.VOID_STONE);
+                entries.accept(ModBlocks.BORDER_BREAKER);
             })
             .build();
 

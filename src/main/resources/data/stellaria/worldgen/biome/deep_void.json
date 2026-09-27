@@ -1,14 +1,15 @@
 {
   "has_precipitation": false,
-  "temperature": 0.0,
+  "temperature": 10.0,
   "downfall": 0.0,
   "effects": {
-    "fog_color": 11621759,
-    "sky_color": 12418715,
-    "water_color": 14396066,
-    "water_fog_color": 14396066,
+    "fog_color": 0,
+    "sky_color": 0,
+    "water_color": 16777215,
+    "water_fog_color": 0,
     "foliage_color" : 0,
-    "grass_color": 0
+    "grass_color": 0,
+    "ambient_sound" : "stellaria:ebony_ambiance"
   },
   "carvers": {
   },

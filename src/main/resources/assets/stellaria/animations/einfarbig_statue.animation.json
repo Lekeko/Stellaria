@@ -2,22 +2,22 @@
 	"format_version": "1.8.0",
 	"animations": {
 		"einfarbig_statue.idle": {
-			"animation_length": 4,
+			"animation_length": 12,
 			"bones": {
 				"body": {
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
-						"1.0": {
+						"3.0": {
 							"vector": [0, -3, 0],
 							"easing": "easeOutSine"
 						},
-						"3.0": {
+						"9.0": {
 							"vector": [0, 3, 0],
 							"easing": "easeInOutSine"
 						},
-						"4.0": {
+						"12.0": {
 							"vector": [0, 0, 0],
 							"easing": "easeInSine"
 						}
@@ -28,15 +28,15 @@
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
-						"1.0": {
+						"3.0": {
 							"vector": [0, 10, -2.5],
 							"easing": "easeOutSine"
 						},
-						"3.0": {
+						"9.0": {
 							"vector": [0, 10, 2.5],
 							"easing": "easeInOutSine"
 						},
-						"4.0": {
+						"12.0": {
 							"vector": [0, 0, 0],
 							"easing": "easeInSine"
 						}
@@ -45,15 +45,15 @@
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
-						"1.0": {
+						"3.0": {
 							"vector": [0, -7, 0],
 							"easing": "easeOutSine"
 						},
-						"3.0": {
+						"9.0": {
 							"vector": [0, 7, 0],
 							"easing": "easeInOutSine"
 						},
-						"4.0": {
+						"12.0": {
 							"vector": [0, 0, 0],
 							"easing": "easeInSine"
 						}

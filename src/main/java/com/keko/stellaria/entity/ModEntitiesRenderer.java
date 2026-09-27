@@ -20,6 +20,7 @@ import com.keko.stellaria.entity.decour.zregosBoulders.client.ZregosBoulderShatt
 import com.keko.stellaria.entity.decour.zregosMace.client.ZregosMaceRenderer;
 import com.keko.stellaria.entity.decour.zregosShatter.client.zregosShatter.ZregosShatterRenderer;
 import com.keko.stellaria.entity.projectiles.boss.zregos.client.renderers.*;
+import com.keko.stellaria.entity.projectiles.minions.einfarbig.playingCardProj.PlayingCardProjectileRenderer;
 import com.keko.stellaria.entity.projectiles.minions.zregos.client.renderers.ZregosServantProjectileRenderer;
 import com.keko.stellaria.entity.projectiles.player.client.explosive.CosmicShieldProjectile.CosmicShieldProjectileRenderer;
 import com.keko.stellaria.entity.projectiles.player.client.explosive.EndCrystalProjectile.EndCrystalProjectileRenderer;
@@ -72,6 +73,8 @@ public class ModEntitiesRenderer {
         EntityRendererRegistry.register(ModEntities.STAR_PHANTOM, StarPhantomRenderer::new);
         EntityRendererRegistry.register(ModEntities.VOID_DEALER, VoidDealerRenderer::new);
         EntityRendererRegistry.register(ModEntities.MESSIER, MessierRenderer::new);
+
+        EntityRendererRegistry.register(ModProjectiles.PLAYING_CARD_PROJECTILE, PlayingCardProjectileRenderer::new);
 
 
         BlockEntityRenderers.register(ModBlockEntity.BORDER_BREAKER_ENTITY_BLOCK_ENTITY, BorderBreakerEntityRenderer::new);

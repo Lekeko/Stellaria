@@ -86,15 +86,18 @@ public class EbonySkyboxAndVfxHandler {
         }
 
 
-        try {
-            ResourceLocation id = Stellaria.id("star_spark");
-            ParticleSystemManager manager = VeilRenderSystem.renderer().getParticleManager();
-            ParticleEmitter emitter = manager.createEmitter(id);
-            emitter.setPosition(position);
-            emitter.addModule(new LightmapParticleModuleData(LightTexture.FULL_BRIGHT));
-            manager.addParticleSystem(emitter);
-        } catch (Exception ignored) {
-
-        }
+//        try {
+//            ResourceLocation id = Stellaria.id("star_spark");
+//            ParticleSystemManager manager = VeilRenderSystem.renderer().getParticleManager();
+//            ParticleEmitter emitter = manager.createEmitter(id);
+//            emitter.setPosition(position);
+//            emitter.setCount(1);
+//            emitter.setMaxLifetime(1);
+//            emitter.setRate(11);
+//            emitter.addModule(new LightmapParticleModuleData(LightTexture.FULL_BRIGHT));
+//            manager.addParticleSystem(emitter);
+//        } catch (Exception ignored) {
+//
+//        }
     }
 }
