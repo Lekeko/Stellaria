@@ -57,7 +57,7 @@ public class EinfarbigStatue extends Entity implements GeoEntity {
         super.tick();
         if (!level().isClientSide){
             for (Player player : level().players())
-                if (player.distanceTo(this) < 40){
+                if (player.distanceTo(this) < 40 && !player.isSpectator()){
                     for (ServerPlayer splayer : level().getServer().getPlayerList().getPlayers())
                         splayer.playNotifySound(ModSounds.STATUE_SUMMON, SoundSource.MASTER, 1.0f, 1.0f);
 

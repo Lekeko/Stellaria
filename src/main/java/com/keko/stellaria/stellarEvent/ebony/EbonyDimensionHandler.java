@@ -1,5 +1,6 @@
 package com.keko.stellaria.stellarEvent.ebony;
 
+import com.keko.stellaria.blocks.ModBlocks;
 import com.keko.stellaria.entity.ModEntities;
 import com.keko.stellaria.entity.boss.einfarbig.Einfarbig;
 import com.keko.stellaria.entity.boss.einfarbig.EinfarbigStatue;
@@ -28,7 +29,7 @@ public class EbonyDimensionHandler {
 
     public static Vec3 getOriginPos(Level level) {
         Vec3 pos = new Vec3(0.0d, level.getHeight() - 3, 0.0d);
-        while (level.getBlockState(new BlockPos((int) pos.x, (int) pos.y, (int) pos.z)).is(Blocks.AIR))
+        while (!level.getBlockState(new BlockPos((int) pos.x, (int) pos.y, (int) pos.z)).is(ModBlocks.VOID_STONE))
             pos = pos.add(0.0d, -1.0d, 0.0d);
 
         pos = pos.add(posHeightOffset);

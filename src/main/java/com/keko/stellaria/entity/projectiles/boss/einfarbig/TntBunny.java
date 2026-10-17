@@ -125,17 +125,19 @@ public class TntBunny extends AbstractArrow implements GeoEntity {
     }
 
     private void launchOwner() {
-        Vec3 pos = position();
-        Vec3 ownerPos = getOwner().position();
-        Vec3 dir = ownerPos.subtract(pos);
-        Vec3 dirNorm = dir.normalize();
-        float speed = (float) dir.length();
-        if (speed == 0)
-            speed = 0.01f;
-        float amp = 4.0f;
+        if  (distanceTo(getOwner()) < 10.0f){
+            Vec3 pos = position();
+            Vec3 ownerPos = getOwner().position();
+            Vec3 dir = ownerPos.subtract(pos);
+            Vec3 dirNorm = dir.normalize();
+            float speed = (float) dir.length();
+            if (speed == 0)
+                speed = 0.01f;
+            float amp = 4.0f;
 
-        getOwner().addDeltaMovement(dirNorm.scale(1/speed * amp));
-        getOwner().hurtMarked = true;
+            getOwner().addDeltaMovement(dirNorm.scale(1 / speed * amp));
+            getOwner().hurtMarked = true;
+        }
     }
 
     @Override

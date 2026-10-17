@@ -50,13 +50,13 @@ public abstract class StellarGlide {
         deltaZ *=speed;
 
 
-        float impulseStr = 80;
-        if (deltaZ != 0) {
-           HandleAnimICANTTAKEITANYMORE.xImpulse = ((float) deltaZ > 0 ? 1 : -1) * impulseStr;
-        }
-        if (deltaX != 0) {
-            HandleAnimICANTTAKEITANYMORE.zImpulse = ((float) deltaX > 0 ? 1 : -1) * impulseStr;
-        }
+//        float impulseStr = 80;
+//        if (deltaZ != 0) {
+//           HandleAnimICANTTAKEITANYMORE.xImpulse = ((float) deltaZ > 0 ? 1 : -1) * impulseStr;
+//        }
+//        if (deltaX != 0) {
+//            HandleAnimICANTTAKEITANYMORE.zImpulse = ((float) deltaX > 0 ? 1 : -1) * impulseStr;
+//        }
 
 
 
