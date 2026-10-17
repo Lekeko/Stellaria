@@ -1,3 +1,5 @@
-// 1.21.1	2026-09-26T22:11:08.2506703	Stellaria/stellaria
+// 1.21.1	2026-10-15T01:16:32.615714	Stellaria/stellaria
 e15a5076ed620b67b022fd6b8291816a8ffd190d data\stellaria\worldgen\configured_feature\void_lightstone_spread.json
+d120beb2d0037e29eac0a959d6583cf14c6c66c2 data\stellaria\worldgen\configured_feature\void_lamp_lights.json
 734000c395d2d60c790e6aff36488828b3608e01 data\stellaria\worldgen\placed_feature\void_lightstone_spread_feature.json
+ad115c00a3df35964a0de85e8652a68d0895a6e1 data\stellaria\worldgen\placed_feature\void_lamp_lights_feature.json

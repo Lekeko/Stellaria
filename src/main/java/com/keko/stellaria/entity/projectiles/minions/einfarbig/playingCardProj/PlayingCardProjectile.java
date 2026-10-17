@@ -1,6 +1,9 @@
 package com.keko.stellaria.entity.projectiles.minions.einfarbig.playingCardProj;
 
+import com.keko.stellaria.helper.GameplayUtilHelper;
+import com.keko.stellaria.helper.Trail;
 import com.keko.stellaria.sounds.ModSounds;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -15,10 +18,20 @@ import software.bernie.geckolib.animation.AnimatableManager;
 
 public class PlayingCardProjectile extends AbstractArrow implements GeoEntity {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    Trail trail;
+    private final int STRIP_LENGTH = 20;
+
+
     public PlayingCardProjectile(EntityType<? extends AbstractArrow> entityType, Level level) {
         super(entityType, level);
         this.pickup = Pickup.DISALLOWED;
         setSoundEvent(ModSounds.PAPER_HIT);
+        trail = new Trail(STRIP_LENGTH, this);
+
+    }
+
+    public Trail getTrail() {
+        return trail;
     }
 
 
@@ -26,7 +39,14 @@ public class PlayingCardProjectile extends AbstractArrow implements GeoEntity {
     public void tick() {
         super.tick();
         if (!level().isClientSide){
+            if (inGround){
+                GameplayUtilHelper.createCustomExplosion(level(), getOwner(), position(), 20.2f, 10.0f, ParticleTypes.EXPLOSION, 20);
+                discard();
+            }
+
             if (tickCount > 4 * 20) discard();
+        }else {
+            getTrail().update(1.0f);
         }
     }
 

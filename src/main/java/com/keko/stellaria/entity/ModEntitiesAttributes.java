@@ -1,5 +1,7 @@
 package com.keko.stellaria.entity;
 
+import com.keko.stellaria.entity.boss.einfarbig.Einfarbig;
+import com.keko.stellaria.entity.boss.minions.einfarbig.Messier;
 import com.keko.stellaria.entity.boss.minions.einfarbig.StarPhantom;
 import com.keko.stellaria.entity.boss.minions.einfarbig.VoidDealer;
 import com.keko.stellaria.entity.boss.minions.zregos.CosmicSpider;
@@ -24,7 +26,8 @@ public class ModEntitiesAttributes {
 
         FabricDefaultAttributeRegistry.register(ModEntities.STAR_PHANTOM, StarPhantom.setAtributes());
         FabricDefaultAttributeRegistry.register(ModEntities.VOID_DEALER, VoidDealer.setAtributes());
-        FabricDefaultAttributeRegistry.register(ModEntities.MESSIER, VoidDealer.setAtributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.MESSIER, Messier.setAtributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.EINFARBIG, Einfarbig.setAtributes());
 
     }
 }

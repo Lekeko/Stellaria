@@ -4,6 +4,8 @@ import com.keko.stellaria.blocks.ModBlockEntity;
 import com.keko.stellaria.blocks.borderBreaker.BorderBreakerEntityRenderer;
 import com.keko.stellaria.blocks.maceBlock.ZregosMaceBlockEntityRenderer;
 import com.keko.stellaria.blocks.portal.DraconicCrystalBlockEntityRenderer;
+import com.keko.stellaria.blocks.voidLamp.VoidLampEntityRenderer;
+import com.keko.stellaria.entity.boss.einfarbig.client.EinfarbigRenderer;
 import com.keko.stellaria.entity.boss.einfarbig.client.EinfarbigStatueRenderer;
 import com.keko.stellaria.entity.boss.minions.einfarbig.client.Messier.MessierRenderer;
 import com.keko.stellaria.entity.boss.minions.einfarbig.client.StarPhantom.StarPhantomRenderer;
@@ -19,13 +21,22 @@ import com.keko.stellaria.entity.decour.zregosBoulders.client.ZregosBoulderNorma
 import com.keko.stellaria.entity.decour.zregosBoulders.client.ZregosBoulderShatteredRenderer;
 import com.keko.stellaria.entity.decour.zregosMace.client.ZregosMaceRenderer;
 import com.keko.stellaria.entity.decour.zregosShatter.client.zregosShatter.ZregosShatterRenderer;
+import com.keko.stellaria.entity.projectiles.boss.einfarbig.client.BunnyHatRenderer;
+import com.keko.stellaria.entity.projectiles.boss.einfarbig.client.HoleVortexRenderer;
+import com.keko.stellaria.entity.projectiles.boss.einfarbig.client.TntBunnyRenderer;
+import com.keko.stellaria.entity.projectiles.boss.einfarbig.client.VoidSwordRenderer;
 import com.keko.stellaria.entity.projectiles.boss.zregos.client.renderers.*;
+import com.keko.stellaria.entity.projectiles.minions.einfarbig.VoidLaserWarn.VoidLaserWarnRenderer;
+import com.keko.stellaria.entity.projectiles.minions.einfarbig.voidLaser.VoidLaserRenderer;
+import com.keko.stellaria.entity.projectiles.minions.einfarbig.messierStar.MessierStarRenderer;
 import com.keko.stellaria.entity.projectiles.minions.einfarbig.playingCardProj.PlayingCardProjectileRenderer;
+import com.keko.stellaria.entity.projectiles.minions.einfarbig.voidStar.VoidStarRenderer;
 import com.keko.stellaria.entity.projectiles.minions.zregos.client.renderers.ZregosServantProjectileRenderer;
 import com.keko.stellaria.entity.projectiles.player.client.explosive.CosmicShieldProjectile.CosmicShieldProjectileRenderer;
 import com.keko.stellaria.entity.projectiles.player.client.explosive.EndCrystalProjectile.EndCrystalProjectileRenderer;
 import com.keko.stellaria.entity.projectiles.player.client.mage.FuryProjectile.FuryProjectileRenderer;
 import com.keko.stellaria.entity.projectiles.player.client.mage.amethystProjectile.AmethystProjectileRenderer;
+import com.keko.stellaria.entity.projectiles.player.client.mage.voidBat.VoidBatRenderer;
 import com.keko.stellaria.entity.projectiles.player.client.melee.MeleeSlashRenderer;
 import com.keko.stellaria.entity.projectiles.player.client.melee.SerpentsProjectileRenderer;
 import com.keko.stellaria.entity.projectiles.player.client.ranged.CosmicArrowRenderer;
@@ -69,14 +80,25 @@ public class ModEntitiesRenderer {
 
         //UPDATE
         EntityRendererRegistry.register(ModEntities.EINFARBIG_STATUE, EinfarbigStatueRenderer::new);
+        EntityRendererRegistry.register(ModEntities.EINFARBIG, EinfarbigRenderer::new);
 
         EntityRendererRegistry.register(ModEntities.STAR_PHANTOM, StarPhantomRenderer::new);
         EntityRendererRegistry.register(ModEntities.VOID_DEALER, VoidDealerRenderer::new);
         EntityRendererRegistry.register(ModEntities.MESSIER, MessierRenderer::new);
 
         EntityRendererRegistry.register(ModProjectiles.PLAYING_CARD_PROJECTILE, PlayingCardProjectileRenderer::new);
+        EntityRendererRegistry.register(ModProjectiles.VOID_LASER, VoidLaserRenderer::new);
+        EntityRendererRegistry.register(ModProjectiles.VOID_LASER_WARN, VoidLaserWarnRenderer::new);
+        EntityRendererRegistry.register(ModProjectiles.MESSIER_STAR, MessierStarRenderer::new);
+        EntityRendererRegistry.register(ModProjectiles.VOID_STAR, VoidStarRenderer::new);
+        EntityRendererRegistry.register(ModProjectiles.BUNNY_HAT, BunnyHatRenderer::new);
+        EntityRendererRegistry.register(ModProjectiles.TNT_BUNNY, TntBunnyRenderer::new);
+        EntityRendererRegistry.register(ModProjectiles.HOLE_VORTEX, HoleVortexRenderer::new);
+        EntityRendererRegistry.register(ModProjectiles.VOID_SWORD, VoidSwordRenderer::new);
+        EntityRendererRegistry.register(ModProjectiles.VOID_BAT, VoidBatRenderer::new);
 
 
-        BlockEntityRenderers.register(ModBlockEntity.BORDER_BREAKER_ENTITY_BLOCK_ENTITY, BorderBreakerEntityRenderer::new);
+        BlockEntityRenderers.register(ModBlockEntity.BORDER_BREAKER_ENTITY_BLOCK, BorderBreakerEntityRenderer::new);
+        BlockEntityRenderers.register(ModBlockEntity.VOID_LAMP_ENTITY_BLOCK, VoidLampEntityRenderer::new);
     }
 }

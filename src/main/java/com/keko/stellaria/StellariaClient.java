@@ -1,6 +1,8 @@
 package com.keko.stellaria;
 
+import com.keko.stellaria.blocks.voidLamp.VoidLampEntity;
 import com.keko.stellaria.entity.ModEntitiesRenderer;
+import com.keko.stellaria.entity.boss.einfarbig.Einfarbig;
 import com.keko.stellaria.entity.boss.minions.einfarbig.Messier;
 import com.keko.stellaria.helper.SpaceHelpers;
 import com.keko.stellaria.keyBinds.KeyBindings;
@@ -20,6 +22,7 @@ import com.keko.stellaria.world.dimension.ModDimensions;
 import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientWorldEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
@@ -52,6 +55,14 @@ public class StellariaClient implements ClientModInitializer {
 
     private void events(){
 
+        ClientWorldEvents.AFTER_CLIENT_WORLD_CHANGE.register((minecraft, clientLevel) -> {
+            VoidLampEntity.clearAllLights();
+        });
+
+        ClientPlayConnectionEvents.DISCONNECT.register((clientPacketListener, minecraft) -> {
+            VoidLampEntity.clearAllLights();
+        });
+
         ClientTickEvents.END_CLIENT_TICK.register(minecraft -> {
 
         });
@@ -59,9 +70,10 @@ public class StellariaClient implements ClientModInitializer {
         WorldRenderEvents.END.register((ctx)->{
             if (ctx.world() != null && Minecraft.getInstance().player != null){
                 AABB aabb = SpaceHelpers.createEvenBox(Minecraft.getInstance().player.position(), 5000);
+                float partialTick = ctx.tickCounter().getGameTimeDeltaPartialTick(true);
                 for (Messier messier : Minecraft.getInstance().player.level().getEntitiesOfClass(Messier.class, aabb)){
-                    float size = 10.0f;
-                    ClientShaderHandler.renderMessier(messier.position(), size);
+                    float size = 20.0f;
+                    ClientShaderHandler.renderMessier(messier.getPosition(partialTick), size);
                 }
             }
         });

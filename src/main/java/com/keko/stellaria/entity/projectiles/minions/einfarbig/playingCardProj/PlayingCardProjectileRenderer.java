@@ -4,12 +4,17 @@ import com.keko.stellaria.helper.RenderUtilHelper;
 import com.keko.stellaria.helper.Trail;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
+import foundry.veil.api.client.util.Easing;
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.cache.object.BakedGeoModel;
 import software.bernie.geckolib.model.GeoModel;
@@ -33,6 +38,9 @@ public class PlayingCardProjectileRenderer extends GeoEntityRenderer<PlayingCard
     @Override
     protected void applyRotations(PlayingCardProjectile animatable, PoseStack poseStack, float ageInTicks, float rotationYaw, float partialTick, float nativeScale) {
         super.applyRotations(animatable, poseStack, ageInTicks, rotationYaw, partialTick, nativeScale);
+        poseStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTick, animatable.yRotO, animatable.getYRot()) + animatable.tickCount * partialTick));
+        poseStack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTick, animatable.xRotO, animatable.getXRot()) + 90.0f));
+
     }
 
     @Override
@@ -45,10 +53,10 @@ public class PlayingCardProjectileRenderer extends GeoEntityRenderer<PlayingCard
 
     @Override
     public void render(PlayingCardProjectile entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
-        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
+        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, LightTexture.FULL_BRIGHT);
 
 
-        RenderUtilHelper.renderTrail(entity, partialTick, poseStack, Color.WHITE, Color.BLACK, trail);
+        RenderUtilHelper.renderTrail(entity, partialTick, poseStack, Color.WHITE, Color.BLACK, entity.getTrail(), Vec3.ZERO,1.0f, Easing.LINEAR);
 
     }
 

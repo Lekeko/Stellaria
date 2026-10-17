@@ -31,5 +31,16 @@ public class ModRecipegenerator extends FabricRecipeProvider {
                 .unlockedBy(FabricRecipeProvider.getHasName(Items.CRAFTING_TABLE), FabricRecipeProvider.has(Items.CRAFTING_TABLE))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BORDER_BREAKER)
+                .pattern("232")
+                .pattern("313")
+                .pattern("232")
+                .define('1', Items.NETHER_STAR)
+                .define('2', Items.TNT)
+                .define('3', Items.NETHERITE_SCRAP)
+                .group("multi_bench")
+                .unlockedBy(FabricRecipeProvider.getHasName(Items.CRAFTING_TABLE), FabricRecipeProvider.has(Items.CRAFTING_TABLE))
+                .save(recipeOutput);
+
     }
 }

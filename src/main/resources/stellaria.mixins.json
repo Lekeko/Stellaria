@@ -3,10 +3,11 @@
   "package": "com.keko.stellaria.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "StellariaKeepInvMixin",
-    "NoGravityMixin",
+    "CancelFallDamage",
+    "MovementMixin",
     "ProjectileWeaponAccessor",
     "ShieldMixin",
+    "StellariaKeepInvMixin",
     "VanilaBowMixin",
     "VoidDamageMixin"
   ],
@@ -17,11 +18,11 @@
     "requireAnnotations": true
   },
   "client": [
-    "StellarAnimGlideMixin",
     "CameraAccessor",
     "CloudsBeGoneMixin",
     "ItemRendererAccessor",
     "ItemRendererMixin",
-    "ModelLoaderMixin"
+    "ModelLoaderMixin",
+    "StellarAnimGlideMixin"
   ]
 }

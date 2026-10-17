@@ -24,5 +24,8 @@ public abstract class ModelLoaderMixin {
         this.loadSpecialItemModelAndDependencies(ModelResourceLocation.inventory(ResourceLocation.parse("stellaria:cosmic_bow_inv")));
         this.loadSpecialItemModelAndDependencies(ModelResourceLocation.inventory(ResourceLocation.parse("stellaria:staff_of_fury_inv")));
         this.loadSpecialItemModelAndDependencies(ModelResourceLocation.inventory(ResourceLocation.parse("stellaria:celestial_shield_inv")));
+        this.loadSpecialItemModelAndDependencies(ModelResourceLocation.inventory(ResourceLocation.parse("stellaria:void_glaive_inv")));
+        this.loadSpecialItemModelAndDependencies(ModelResourceLocation.inventory(ResourceLocation.parse("stellaria:whiteout_staff_inv")));
+        this.loadSpecialItemModelAndDependencies(ModelResourceLocation.inventory(ResourceLocation.parse("stellaria:tricksters_hat_inv")));
     }
 }

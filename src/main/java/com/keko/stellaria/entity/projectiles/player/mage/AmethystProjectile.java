@@ -72,7 +72,7 @@ public class AmethystProjectile extends AbstractArrow implements GeoEntity {
             }
 
 
-            if (tickCount > 15 * 20) discard();
+            if (tickCount > 4 * 20 || inGround) discard();
         }
     }
 

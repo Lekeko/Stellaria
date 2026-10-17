@@ -1,7 +1,6 @@
 package com.keko.stellaria.blocks.borderBreaker;
 
 import com.keko.stellaria.blocks.ModBlockEntity;
-import com.keko.stellaria.blocks.portal.DraconicCrystalBlockEntity;
 import com.keko.stellaria.sounds.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -14,7 +13,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
@@ -33,7 +31,7 @@ public class BorderBreakerEntity extends BlockEntity implements GeoBlockEntity {
     private boolean breaking = false;
 
     public BorderBreakerEntity( BlockPos blockPos, BlockState blockState) {
-        super(ModBlockEntity.BORDER_BREAKER_ENTITY_BLOCK_ENTITY, blockPos, blockState);
+        super(ModBlockEntity.BORDER_BREAKER_ENTITY_BLOCK, blockPos, blockState);
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BorderBreakerEntity entity) {

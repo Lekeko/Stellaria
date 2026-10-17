@@ -1,6 +1,7 @@
 package com.keko.stellaria.entity;
 
 import com.keko.stellaria.Stellaria;
+import com.keko.stellaria.entity.boss.einfarbig.Einfarbig;
 import com.keko.stellaria.entity.boss.einfarbig.EinfarbigStatue;
 import com.keko.stellaria.entity.boss.minions.einfarbig.Messier;
 import com.keko.stellaria.entity.boss.minions.einfarbig.StarPhantom;
@@ -69,6 +70,10 @@ public class ModEntities {
     public static final EntityType<EinfarbigStatue> EINFARBIG_STATUE = Registry.register(
             BuiltInRegistries.ENTITY_TYPE, Stellaria.id("einfarbig_statue"),
             EntityType.Builder.of(EinfarbigStatue::new, MobCategory.MISC).sized(1.0f, 1.0f).build());
+
+    public static final EntityType<Einfarbig> EINFARBIG = Registry.register(
+            BuiltInRegistries.ENTITY_TYPE, Stellaria.id("einfarbig"),
+            EntityType.Builder.of(Einfarbig::new, MobCategory.MONSTER).sized(15.0f, 15.0f).build());
 
     public static final EntityType<StarPhantom> STAR_PHANTOM = Registry.register(
             BuiltInRegistries.ENTITY_TYPE, Stellaria.id("star_phantom"),

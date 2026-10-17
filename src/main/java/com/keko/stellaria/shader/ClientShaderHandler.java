@@ -152,4 +152,14 @@ public class ClientShaderHandler {
         vec3HashMap.put("pos", pos);
         ClientShaderRenderer.createAndRunShader("messier", floatHashMap, vec3HashMap, null, null);
     }
+
+    public static void voidLaserShader(double x1, double y1, double z1, double x2, double y2, double z2, float laserThickness){
+        HashMap<String, Vec3> vec3HashMap = new HashMap<>();
+        HashMap<String, Float> floatHashMap = new HashMap<>();
+
+        vec3HashMap.put("cyl_base", new Vec3(x1, y1, z1));
+        vec3HashMap.put("cyl_end", new Vec3(x2, y2, z2));
+        floatHashMap.put("laser_thickness", laserThickness);
+        ClientShaderRenderer.createAndRunShader("void_laser", floatHashMap, vec3HashMap, null, null);
+    }
 }

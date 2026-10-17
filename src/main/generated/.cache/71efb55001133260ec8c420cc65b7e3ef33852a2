@@ -1,3 +1,5 @@
-// 1.21.1	2026-09-26T22:11:08.2516676	Stellaria/Recipes
+// 1.21.1	2026-10-15T01:16:32.615714	Stellaria/Recipes
+ee5254b3f5efd46bc4a2b2953b0a24840478c664 data\stellaria\advancement\recipes\building_blocks\border_breaker.json
 115a3324e7071ecbebb90b7034999bcc8aac6acf data\stellaria\recipe\draconic_crystal_block.json
 33bedebf64506848300d6a90ae4101d39a84e985 data\stellaria\advancement\recipes\building_blocks\draconic_crystal_block.json
+e64c97671f5cf869ec3c1dd630f36f124c0227b0 data\stellaria\recipe\border_breaker.json

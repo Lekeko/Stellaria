@@ -1,0 +1,52 @@
+{
+  "render_style": "BILLBOARD",
+  "modules": [
+    {
+      "module": "veil:lightmap",
+      "block": "15728880",
+      "sky": "15728880"
+    },
+    {
+      "module": "size",
+      "size" : "q.agePercent * 3"
+    },
+    {
+      "module": "color",
+      "gradient": {
+        "rgb_points": [
+          {
+            "percent": 0,
+            "color": "0xFFFFFF"
+          },
+          {
+            "percent": 1,
+            "color": "0xFFFFFF"
+          }
+        ],
+        "alpha_points": [
+          {
+            "percent": 0,
+            "alpha": 1
+          },
+          {
+            "percent": 1,
+            "alpha": 1
+          }
+        ]
+      },
+      "interpolant": "q.agePercent"
+    }
+  ],
+  "sprite_data": {
+    "sprite": "stellaria:textures/particle/star_spark.png",
+    "frame_count": 8,
+    "frame_time": 2.0,
+    "frame_width": 8,
+    "frame_height": 1,
+    "stretch_to_lifetime": false
+  },
+  "additive": false,
+  "should_collide": false,
+  "face_velocity": false,
+  "velocity_stretch_factor": 1.0
+}

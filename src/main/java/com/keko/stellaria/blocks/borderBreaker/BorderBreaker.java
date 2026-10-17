@@ -1,7 +1,6 @@
 package com.keko.stellaria.blocks.borderBreaker;
 
 import com.keko.stellaria.blocks.ModBlockEntity;
-import com.keko.stellaria.blocks.portal.DraconicCrystalBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
@@ -42,7 +41,7 @@ public class BorderBreaker extends BaseEntityBlock {
             Level level, BlockState blockState, BlockEntityType<T> type) {
         return createTickerHelper(
                 type,
-                ModBlockEntity.BORDER_BREAKER_ENTITY_BLOCK_ENTITY,
+                ModBlockEntity.BORDER_BREAKER_ENTITY_BLOCK,
                 BorderBreakerEntity::tick
         );
     }
@@ -80,7 +79,6 @@ public class BorderBreaker extends BaseEntityBlock {
         entity.setSize(entity.getSize() + 2);
         if (entity.getSize() > 5)
             entity.setSize(1);
-        System.out.println(entity.getSize());
     }
 
     @Override

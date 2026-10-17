@@ -1,6 +1,9 @@
 package com.keko.stellaria.items;
 
 import com.keko.stellaria.Stellaria;
+import com.keko.stellaria.items.stellariaWeaponTypes.einfarbig.trickstershat.TrickstersHat;
+import com.keko.stellaria.items.stellariaWeaponTypes.einfarbig.voidGlaive.VoidGlaive;
+import com.keko.stellaria.items.stellariaWeaponTypes.einfarbig.whiteoutStaff.WhiteOutStaff;
 import com.keko.stellaria.items.stellariaWeaponTypes.zregos.celestialShield.CelestialShield;
 import com.keko.stellaria.items.stellariaWeaponTypes.zregos.cosmicBow.CosmicBow;
 import com.keko.stellaria.items.stellariaWeaponTypes.zregos.serpentsBlade.SerpentsBlade;
@@ -22,6 +25,12 @@ public class ModItems {
     public static final Item STAFF_OF_FURY = registerItem(new StaffOfFury(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)), "staff_of_fury");
 
     public static final Item CELESTIAL_SHIELD = registerItem(new CelestialShield(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)), "celestial_shield");
+
+    public static final Item VOID_GLAIVE = registerItem(new VoidGlaive(Tiers.NETHERITE,
+            new Item.Properties().attributes(SwordItem.createAttributes(Tiers.NETHERITE, 7, -1.8f)).rarity(Rarity.EPIC)), "void_glaive");
+    public static final Item WHITEOUT_STAFF = registerItem(new WhiteOutStaff(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)), "whiteout_staff");
+
+    public static final Item TRICKSTERS_HAT = registerItem(new TrickstersHat(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)), "tricksters_hat");
 
 
     public static <T extends net.minecraft.world.item.Item> T registerItem(T item, String path) {

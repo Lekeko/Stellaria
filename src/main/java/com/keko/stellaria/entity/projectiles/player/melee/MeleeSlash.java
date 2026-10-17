@@ -1,5 +1,9 @@
 package com.keko.stellaria.entity.projectiles.player.melee;
 
+import com.keko.stellaria.entity.ModProjectiles;
+import com.keko.stellaria.entity.projectiles.boss.einfarbig.VoidSword;
+import com.keko.stellaria.entity.projectiles.minions.einfarbig.voidStar.VoidStar;
+import com.keko.stellaria.logic.StellariaConstants;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -121,12 +125,20 @@ public class MeleeSlash extends AbstractArrow implements GeoAnimatable {
     @Override
     public void tick() {
         super.tick();
-
         if (!level().isClientSide){
             addDeltaMovement(getDeltaMovement().scale(-1.0d).scale(0.2f));
             if (enemiesHit >= 3 || tickCount > 20 || inGround)
                 discard();
-        }else {
+            if (getSlashType() == StellariaConstants.VOID_GLAIVE.ordinal()){
+                if (tickCount % 4 == 0){
+
+                    VoidStar voidStar = new VoidStar(ModProjectiles.VOID_STAR, level());
+                    voidStar.setOwner(getOwner());
+                    voidStar.setPos(position());
+                    voidStar.setFriendly(true);
+                    level().addFreshEntity(voidStar);
+                }
+            }
         }
     }
 

@@ -1,6 +1,7 @@
 package com.keko.stellaria.entity.boss.minions.zregos.client.Crystalius;
 
 import com.keko.stellaria.entity.boss.minions.zregos.Crystalius;
+import com.keko.stellaria.helper.MathHelpers;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -57,20 +58,10 @@ public class CrystaliusRenderer extends GeoEntityRenderer<Crystalius> {
         }
     }
 
-    private static float lerp(float a, float b, float t) {
-        return a + (b - a) * t;
-    }
-
-    private static Color lerpColor(Color c1, Color c2, float t) {
-        int r = Math.round(lerp(c1.getRed(), c2.getRed(), t));
-        int g = Math.round(lerp(c1.getGreen(), c2.getGreen(), t));
-        int b = Math.round(lerp(c1.getBlue(), c2.getBlue(), t));
-        return new Color(r, g, b);
-    }
 
     private static Color getRingColor(float progress) {
         float t = 1.0f - Math.abs(2.0f * progress - 1.0f);
-        return lerpColor(COLOR1, COLOR2, t);
+        return MathHelpers.lerpColor(COLOR1, COLOR2, t);
     }
 
     private void renderSaturnLikeCircle(Crystalius entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource) {

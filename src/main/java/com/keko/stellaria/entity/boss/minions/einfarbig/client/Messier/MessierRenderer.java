@@ -5,6 +5,7 @@ import com.keko.stellaria.entity.boss.minions.einfarbig.client.StarPhantom.StarP
 import com.keko.stellaria.shader.ClientShaderHandler;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.culling.Frustum;
@@ -15,6 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.cache.object.BakedGeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
@@ -61,6 +63,13 @@ public class MessierRenderer extends GeoEntityRenderer<Messier> {
 
     @Override
     public boolean shouldRender(Messier entity, Frustum frustum, double d, double e, double f) {
+        if (Minecraft.getInstance().player != null){
+            if (!Minecraft.getInstance().player.isDeadOrDying() && Vec3.atCenterOf(entity.getOnPos()).closerThan(new Vec3(d, e, f), Minecraft.getInstance().options.getEffectiveRenderDistance() * 16)) {
+                entity.addLight();
+            } else {
+                entity.removeLight();
+            }
+        }
         return true;
     }
 

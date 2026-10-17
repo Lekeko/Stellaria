@@ -28,23 +28,25 @@ public class StarPhantomRenderer extends GeoEntityRenderer<StarPhantom> {
 
     @Override
     public void render(StarPhantom entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
-        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, LightTexture.FULL_BRIGHT);
-        RenderSystem.disableCull();
-        float damageTicker = entity.getDamageTicker();
-        if (damageTicker > 0) {
-            int alpha = 100;
-            this.reRender(
-                    this.getGeoModel().getBakedModel(this.getGeoModel().getModelResource(entity)),
-                    poseStack,
-                    bufferSource,
-                    entity,
-                    RenderType.text(getTextureLocation(entity)),
-                    bufferSource.getBuffer(RenderType.text(getTextureLocation(entity))),
-                    partialTick,
-                    LightTexture.FULL_BRIGHT,
-                    OverlayTexture.NO_OVERLAY,
-                    (alpha << 24) | 0x00FF0000
-            );
+        if (!entity.getIsTeleporting()) {
+            super.render(entity, entityYaw, partialTick, poseStack, bufferSource, LightTexture.FULL_BRIGHT);
+            RenderSystem.disableCull();
+            float damageTicker = entity.getDamageTicker();
+            if (damageTicker > 0) {
+                int alpha = 100;
+                this.reRender(
+                        this.getGeoModel().getBakedModel(this.getGeoModel().getModelResource(entity)),
+                        poseStack,
+                        bufferSource,
+                        entity,
+                        RenderType.text(getTextureLocation(entity)),
+                        bufferSource.getBuffer(RenderType.text(getTextureLocation(entity))),
+                        partialTick,
+                        LightTexture.FULL_BRIGHT,
+                        OverlayTexture.NO_OVERLAY,
+                        (alpha << 24) | 0x00FF0000
+                );
+            }
         }
     }
 

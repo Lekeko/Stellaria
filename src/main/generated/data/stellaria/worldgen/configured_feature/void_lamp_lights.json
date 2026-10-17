@@ -1,0 +1,7 @@
+{
+  "type": "stellaria:void_lamp_lights_feature",
+  "config": {
+    "blockID": "stellaria:void_lamp",
+    "number": 1
+  }
+}

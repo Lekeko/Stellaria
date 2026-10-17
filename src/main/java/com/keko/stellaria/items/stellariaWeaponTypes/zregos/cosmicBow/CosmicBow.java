@@ -52,7 +52,7 @@ public class CosmicBow extends StellarRangedWeapon implements GeoItem {
                 return super.use(level, player, interactionHand);
             triggerAnim(player, GeoItem.getOrAssignId(player.getItemInHand(interactionHand), (ServerLevel) level), "controller", "cosmic_bow.shoot");
 
-            float speed = 5.0f;
+            float speed = 6.0f;
 
             level.playSound(null, player.getOnPos(),ModSounds.COSMIC_ARROW_SHOT, SoundSource.PLAYERS, 1.0f, 0.7f + level.random.nextFloat());
             CosmicArrow cosmicArrow = new CosmicArrow(ModProjectiles.COSMIC_ARROW, level);

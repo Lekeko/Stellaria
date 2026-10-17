@@ -29,6 +29,7 @@ public class ZregosRenderer extends GeoEntityRenderer<Zregos> {
     public ZregosRenderer(EntityRendererProvider.Context context) {
         super(context, new ZregosModel());
     }
+
     @Override
     public @NotNull ResourceLocation getTextureLocation(Zregos zregos) {
         return Stellaria.id("textures/entity/zregos_head.png");

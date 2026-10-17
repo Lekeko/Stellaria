@@ -108,17 +108,16 @@ public class StellarEventHandler {
         }
     }
 
-    private static void celebrateOrSmth(Level level) {
-        System.out.println("wooow good job");
+    private static void celebrateOrSmth(Level level,int bosss) {
         for (Player player : level.players())
-            ServerPlayNetworking.send((ServerPlayer) player, new BeginEndAnimS2C(0));
+            ServerPlayNetworking.send((ServerPlayer) player, new BeginEndAnimS2C(bosss));
     }
 
-    public static void onBossDied(ServerLevel level) {
+    public static void onBossDied(ServerLevel level, int bosss) {
         boss = null;
         bossUUID = null;
         bossWasAlive = false;
-        celebrateOrSmth(level);
+        celebrateOrSmth(level, bosss);
     }
 
 

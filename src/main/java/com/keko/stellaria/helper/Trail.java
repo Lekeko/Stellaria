@@ -24,9 +24,9 @@ public class Trail {
         return entityPositions;
     }
 
-    public void update(float partialTick, Entity entity) {
-        if (entity == null) return;
+    public void update(float partialTick) {
 
+        if (entity == null) return;
         ArrayList<Vec3> positions = entityPositions.computeIfAbsent(entity.getUUID(), k -> new ArrayList<>());
         Vec3 currentTickPos = entity.getPosition(partialTick);
 

@@ -108,7 +108,7 @@ void main() {
             vec4 actualSphereTexture;
             switch(i){
                 case 0 : actualSphereTexture = texture(StarTexture, sphereTexture); break;
-                case 1 : actualSphereTexture = texture(SoftTexture, sphereTexture) / ( max(0.01,pow(abs(normal.y), 0.8)) * 9); break;
+//                case 1 : actualSphereTexture = texture(SoftTexture, sphereTexture) / ( max(0.01,pow(abs(normal.y), 0.8)) * 9); break;
             }
 
             fragColor += actualSphereTexture;

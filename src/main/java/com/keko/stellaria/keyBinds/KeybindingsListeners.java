@@ -12,6 +12,7 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.Input;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 
@@ -39,7 +40,9 @@ public abstract class KeybindingsListeners {
         if (swingCurrentCooldown > 0)
             swingCurrentCooldown--;
 
-        if (client.player.level().dimension() == ModDimensions.ARTHA_LEVEL_KEY || client.player.level().dimension() == ModDimensions.EBONY_LEVEL_KEY){
+        ItemStack stack = client.player.getItemInHand(InteractionHand.MAIN_HAND);
+
+        if (client.player.level().dimension() == ModDimensions.ARTHA_LEVEL_KEY || client.player.level().dimension() == ModDimensions.EBONY_LEVEL_KEY || stack.getOrDefault(ModDataComponentTypes.VOID_GLAIVE_ACTIVE,0) > 0){
             if (client.options.keyAttack.isDown() && swingCurrentCooldown <= 0 && (client.player.getMainHandItem().getItem() instanceof SwordItem heldItem)){ //dafuq is a pattern variable intellij???
                 int sword = StellariaConstants.VANILLA.ordinal();
                 swingCurrentCooldown = swingCooldown;
@@ -47,12 +50,15 @@ public abstract class KeybindingsListeners {
                 if (client.player.getMainHandItem().getItem() instanceof StellarSwordWeapon)
                     sword = ((StellarSwordWeapon)client.player.getMainHandItem().getItem()).getSwordType();
 
+
                 client.player.playSound(SoundEvents.PLAYER_ATTACK_SWEEP, 0.2f, 1f);
 
                 client.player.swing(client.player.getUsedItemHand());
                 ClientPlayNetworking.send(new SlashAttackC2S(sword));
             }
         }
+
+
 
 
     }

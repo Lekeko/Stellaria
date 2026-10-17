@@ -29,7 +29,7 @@ public class VoidDamageMixin {
                     if (artha != null) {
                         serverPlayer.teleportTo(
                                 artha,
-                                0.0f, 2000.0d, 430.0f, 0.0f, 0.0f
+                                0.0f, 400.0d, 130.0f, 0.0f, 0.0f
                         );
                         serverPlayer.setDeltaMovement(Vec3.ZERO);
                         serverPlayer.hurtMarked = true;

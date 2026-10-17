@@ -2,6 +2,7 @@ package com.keko.stellaria;
 
 import com.keko.stellaria.blocks.ModBlockEntity;
 import com.keko.stellaria.blocks.ModBlocks;
+import com.keko.stellaria.commands.ModCommands;
 import com.keko.stellaria.component.ModDataComponentTypes;
 import com.keko.stellaria.effects.ModStatusEffects;
 import com.keko.stellaria.entity.ModEntities;
@@ -29,6 +30,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -82,6 +84,7 @@ public class Stellaria implements ModInitializer {
         ModFeatures.init();
         ModBiomes.init();
         ModWorldGen.init();
+        ModCommands.init();
     }
 
     private void event(){
@@ -110,7 +113,9 @@ public class Stellaria implements ModInitializer {
                                 0,0,0,0
 
                         ));
+
             }
+
             Level level_ebony = server.getLevel(ModDimensions.EBONY_LEVEL_KEY);
             if (level_ebony == null) return;
             if (!level_artha.isClientSide){
@@ -126,11 +131,14 @@ public class Stellaria implements ModInitializer {
         ServerPlayerEvents.COPY_FROM.register((oldPlayer, newPlayer, alive) -> {
             UUID id = oldPlayer.getUUID();
 
-            boolean inArtha = oldPlayer.level()
+            boolean inArthaOrEbony = oldPlayer.level()//the vars name is gonna get long in the future
                     .dimension()
-                    .equals(ModDimensions.ARTHA_LEVEL_KEY);
+                    .equals(ModDimensions.ARTHA_LEVEL_KEY) ||
+                    oldPlayer.level()
+                            .dimension()
+                            .equals(ModDimensions.EBONY_LEVEL_KEY);
 
-            if (inArtha) {
+            if (inArthaOrEbony) {
                 ListTag tag = new ListTag();
                 oldPlayer.getInventory().save(tag);
                 SAVED_INVENTORIES.put(id, tag);

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "multi_bench",
+  "key": {
+    "1": {
+      "item": "minecraft:nether_star"
+    },
+    "2": {
+      "item": "minecraft:tnt"
+    },
+    "3": {
+      "item": "minecraft:netherite_scrap"
+    }
+  },
+  "pattern": [
+    "232",
+    "313",
+    "232"
+  ],
+  "result": {
+    "count": 1,
+    "id": "stellaria:border_breaker"
+  }
+}

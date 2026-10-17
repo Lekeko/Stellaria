@@ -21,6 +21,7 @@ public class ArthaHudHandler {
     private static int wave = 0;
     private static int alive = 0;
     private static int toSpawn = 0;
+    private static int boss;
 
     public static void setAlive(int alive) {
         ArthaHudHandler.alive = alive;
@@ -157,16 +158,16 @@ public class ArthaHudHandler {
         poseStack.popPose();
     }
 
-    public static void setTimeToGo(boolean timeToGo) {
+    public static void setTimeToGo(boolean timeToGo, int bosss) {
         ArthaHudHandler.timeToGo = timeToGo;
+        boss = bosss;
     }
 
     private static void renderTheFinaleScreen(GuiGraphics guiGraphics) {
-        System.out.println(endAnimation < MAX_END_ANIM_TIME);
         if (endAnimation < MAX_END_ANIM_TIME)
             endAnimation += Minecraft.getInstance().getTimer().getGameTimeDeltaTicks();
         else {
-            ClientPlayNetworking.send(new SendHomeC2S(0));
+            ClientPlayNetworking.send(new SendHomeC2S(boss));
             timeToGo = false;
             endAnimation = 0;
         }

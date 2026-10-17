@@ -38,7 +38,7 @@ public class UtilHelper {
 
         for (Player player : enemy.level().players()){
             float curDist = player.distanceTo(enemy);
-            if (curDist < finalDist){
+            if (curDist < finalDist && !player.isCreative() && !player.isSpectator()){
                 target = player;
                 finalDist = curDist;
             }

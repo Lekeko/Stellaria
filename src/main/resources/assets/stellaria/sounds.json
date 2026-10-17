@@ -1,4 +1,3 @@
-
 {
   "zregos_laser": {
     "sounds": [
@@ -6,8 +5,8 @@
     ]
   },
   "zregos_laser_beam": {
-  "sounds": [
-    "stellaria:zregos_laser_beam"
+    "sounds": [
+      "stellaria:zregos_laser_beam"
     ]
   },
   "zregos_shatter": {
@@ -51,6 +50,96 @@
       "stellaria:paper_hit_2",
       "stellaria:paper_hit_3",
       "stellaria:paper_hit_4"
+    ]
+  },
+  "messier_star_impact": {
+    "sounds": [
+      "stellaria:messier_star_impact"
+    ]
+  },
+  "void_glaive_activate": {
+    "sounds": [
+      "stellaria:void_glaive_activate"
+    ]
+  },
+  "staff_spawn": {
+    "sounds": [
+      "stellaria:staff_spawn"
+    ]
+  },
+  "bunny_launch": {
+    "sounds": [
+      "stellaria:bunny_launch"
+    ]
+  },
+  "statue_summon": {
+    "sounds": [
+      "stellaria:statue_summon"
+    ]
+  },
+  "messier_spawn": {
+    "sounds": [
+      "stellaria:messier_spawn"
+    ]
+  },
+  "messier_lasers": {
+    "sounds": [
+      "stellaria:messier_lasers"
+    ]
+  },
+  "void_dealer_spawn": {
+    "sounds": [
+      "stellaria:void_dealer_spawn"
+    ]
+  },
+  "void_dealer_laser": {
+    "sounds": [
+      "stellaria:void_dealer_laser"
+    ]
+  },
+  "star_phantom_tp": {
+    "sounds": [
+      "stellaria:star_phantom_tp"
+    ]
+  },
+  "star_phantom_slash": {
+    "sounds": [
+      "stellaria:star_phantom_slash"
+    ]
+  },
+  "star_phantom_shoot": {
+    "sounds": [
+      "stellaria:star_phantom_shoot"
+    ]
+  },
+  "einifarbig_spawn": {
+    "sounds": [
+      "stellaria:einifarbig_spawn"
+    ]
+  },
+  "eini_defeat": {
+    "sounds": [
+      "stellaria:eini_defeat"
+    ]
+  },
+  "eini_laser": {
+    "sounds": [
+      "stellaria:eini_laser"
+    ]
+  },
+  "eini_phase": {
+    "sounds": [
+      "stellaria:eini_phase"
+    ]
+  },
+  "eini_stars": {
+    "sounds": [
+      "stellaria:eini_stars"
+    ]
+  },
+  "eini_tp": {
+    "sounds": [
+      "stellaria:eini_tp"
     ]
   }
 }

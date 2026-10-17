@@ -30,6 +30,15 @@ public class ItemRendererMixin {
         if (stack.is(ModItems.CELESTIAL_SHIELD) && modelTransformation == ItemDisplayContext.GUI) {
             return ((ItemRendererAccessor) this).stellaria$getModel().getModelManager().getModel(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(Stellaria.MOD_ID, "celestial_shield_inv"), "inventory"));
         }
+        if (stack.is(ModItems.VOID_GLAIVE) && modelTransformation == ItemDisplayContext.GUI) {
+            return ((ItemRendererAccessor) this).stellaria$getModel().getModelManager().getModel(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(Stellaria.MOD_ID, "void_glaive_inv"), "inventory"));
+        }
+        if (stack.is(ModItems.WHITEOUT_STAFF) && modelTransformation == ItemDisplayContext.GUI) {
+            return ((ItemRendererAccessor) this).stellaria$getModel().getModelManager().getModel(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(Stellaria.MOD_ID, "whiteout_staff_inv"), "inventory"));
+        }
+        if (stack.is(ModItems.TRICKSTERS_HAT) && modelTransformation == ItemDisplayContext.GUI) {
+            return ((ItemRendererAccessor) this).stellaria$getModel().getModelManager().getModel(new ModelResourceLocation(ResourceLocation.fromNamespaceAndPath(Stellaria.MOD_ID, "tricksters_hat_inv"), "inventory"));
+        }
         return value;
     }
 }

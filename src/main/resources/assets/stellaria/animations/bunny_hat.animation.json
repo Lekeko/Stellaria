@@ -1,0 +1,192 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"bunny_hat.spawn": {
+			"animation_length": 3.5833,
+			"bones": {
+				"hat": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [180, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"1.25": {
+							"vector": [180, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"1.5417": {
+							"vector": [180, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"1.8333": {
+							"vector": [180, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"2.125": {
+							"vector": [180, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"2.4167": {
+							"vector": [180, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"2.7083": {
+							"vector": [180, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"3.0": {
+							"vector": [180, 0, 0],
+							"easing": "easeOutBack"
+						},
+						"3.2917": {
+							"vector": [180, 0, 0],
+							"easing": "easeOutBack"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"1.0": {
+							"vector": [0, 34, 0],
+							"easing": "easeOutBack"
+						},
+						"1.25": {
+							"vector": [0, 34, 0],
+							"easing": "easeOutBack"
+						},
+						"1.5": {
+							"vector": [0, 28, 0],
+							"easing": "easeOutBack"
+						},
+						"1.5417": {
+							"vector": [0, 34, 0],
+							"easing": "easeOutBack"
+						},
+						"1.7917": {
+							"vector": [0, 28, 0],
+							"easing": "easeOutBack"
+						},
+						"1.8333": {
+							"vector": [0, 34, 0],
+							"easing": "easeOutBack"
+						},
+						"2.0833": {
+							"vector": [0, 28, 0],
+							"easing": "easeOutBack"
+						},
+						"2.125": {
+							"vector": [0, 34, 0],
+							"easing": "easeOutBack"
+						},
+						"2.375": {
+							"vector": [0, 28, 0],
+							"easing": "easeOutBack"
+						},
+						"2.4167": {
+							"vector": [0, 34, 0],
+							"easing": "easeOutBack"
+						},
+						"2.6667": {
+							"vector": [0, 28, 0],
+							"easing": "easeOutBack"
+						},
+						"2.7083": {
+							"vector": [0, 34, 0],
+							"easing": "easeOutBack"
+						},
+						"2.9583": {
+							"vector": [0, 28, 0],
+							"easing": "easeOutBack"
+						},
+						"3.0": {
+							"vector": [0, 34, 0],
+							"easing": "easeOutBack"
+						},
+						"3.25": {
+							"vector": [0, 28, 0],
+							"easing": "easeOutBack"
+						},
+						"3.2917": {
+							"vector": [0, 34, 0],
+							"easing": "easeOutBack"
+						},
+						"3.5417": {
+							"vector": [0, 28, 0],
+							"easing": "easeOutBack"
+						}
+					},
+					"scale": {
+						"1.25": {
+							"vector": [1, 1, 1]
+						},
+						"1.5": {
+							"vector": [1.4, 1.4, 1.4],
+							"easing": "easeOutBack",
+							"easingArgs": [2]
+						},
+						"1.5417": {
+							"vector": [1, 1, 1]
+						},
+						"1.7917": {
+							"vector": [1.4, 1.4, 1.4],
+							"easing": "easeOutBack",
+							"easingArgs": [2]
+						},
+						"1.8333": {
+							"vector": [1, 1, 1]
+						},
+						"2.0833": {
+							"vector": [1.4, 1.4, 1.4],
+							"easing": "easeOutBack",
+							"easingArgs": [2]
+						},
+						"2.125": {
+							"vector": [1, 1, 1]
+						},
+						"2.375": {
+							"vector": [1.4, 1.4, 1.4],
+							"easing": "easeOutBack",
+							"easingArgs": [2]
+						},
+						"2.4167": {
+							"vector": [1, 1, 1]
+						},
+						"2.6667": {
+							"vector": [1.4, 1.4, 1.4],
+							"easing": "easeOutBack",
+							"easingArgs": [2]
+						},
+						"2.7083": {
+							"vector": [1, 1, 1]
+						},
+						"2.9583": {
+							"vector": [1.4, 1.4, 1.4],
+							"easing": "easeOutBack",
+							"easingArgs": [2]
+						},
+						"3.0": {
+							"vector": [1, 1, 1]
+						},
+						"3.25": {
+							"vector": [1.4, 1.4, 1.4],
+							"easing": "easeOutBack",
+							"easingArgs": [2]
+						},
+						"3.2917": {
+							"vector": [1, 1, 1]
+						},
+						"3.5417": {
+							"vector": [1.4, 1.4, 1.4],
+							"easing": "easeOutBack",
+							"easingArgs": [2]
+						}
+					}
+				}
+			}
+		}
+	}
+}

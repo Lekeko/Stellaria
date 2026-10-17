@@ -29,6 +29,8 @@ public class MeleeSlashRenderer extends GeoEntityRenderer<MeleeSlash> {
     public ResourceLocation getTextureLocation(MeleeSlash animatable) {
         if (animatable.getSlashType() == StellariaConstants.SERPENTS_BLADE.ordinal())
             return Stellaria.id("textures/entity/slash_attack_melee_zregos.png");
+        if (animatable.getSlashType() == StellariaConstants.VOID_GLAIVE.ordinal())
+            return Stellaria.id("textures/entity/slash_attack_melee_einfarbig.png");
 
         return super.getTextureLocation(animatable);
     }
@@ -74,19 +76,15 @@ public class MeleeSlashRenderer extends GeoEntityRenderer<MeleeSlash> {
         float wideness =10.4f;
         float anim = Mth.sin(entity.getClientTickerINeed()) * wideness;
 
-        if (slashType == StellariaConstants.VANILLA.ordinal()){
-            super.render(entity, entityYaw, partialTick, poseStack, bufferSource, LightTexture.FULL_BRIGHT);
-
-        }
-        if (slashType == StellariaConstants.SERPENTS_BLADE.ordinal()){
-            super.render(entity, entityYaw, partialTick, poseStack, bufferSource, LightTexture.FULL_BRIGHT);
-        }
+        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, LightTexture.FULL_BRIGHT);
     }
 
     @Override
     public void preRender(PoseStack poseStack, MeleeSlash animatable, BakedGeoModel model, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, int colour) {
         super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, colour);
         poseStack.scale(2.0f,2.0f,2.0f);
+        if (animatable.getSlashType() == StellariaConstants.VOID_GLAIVE.ordinal())
+            poseStack.scale(2.0f,2.0f,2.0f);
     }
 
     @Override

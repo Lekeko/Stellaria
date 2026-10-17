@@ -85,7 +85,7 @@ public class CosmicArrow extends AbstractArrow implements GeoEntity {
                 this.onHitEntity(new EntityHitResult(entity));
             }
 
-            if (level().dimension() == ModDimensions.ARTHA_LEVEL_KEY)
+            if (level().dimension() == ModDimensions.ARTHA_LEVEL_KEY || level().dimension() == ModDimensions.EBONY_LEVEL_KEY)
                 for (Player player : level().players()) {
                     float x = (level().random.nextFloat() - 0.5f) * 2;
                     float y = (level().random.nextFloat() - 0.5f) * 2;

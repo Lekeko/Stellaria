@@ -109,8 +109,9 @@ public class Zregos extends Monster implements GeoEntity {
     public void die(DamageSource damageSource) {
         super.die(damageSource);
         if (!level().isClientSide) {
-            StellarEventHandler.onBossDied((ServerLevel) level());
-        }    }
+            StellarEventHandler.onBossDied((ServerLevel) level(), 1);
+        }
+    }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {

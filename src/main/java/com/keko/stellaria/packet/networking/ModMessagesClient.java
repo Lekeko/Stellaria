@@ -3,6 +3,7 @@ package com.keko.stellaria.packet.networking;
 import com.keko.stellaria.Stellaria;
 import com.keko.stellaria.entity.boss.minions.zregos.ZregosServant;
 import com.keko.stellaria.entity.boss.zregos.Zregos;
+import com.keko.stellaria.helper.GameplayUtilHelper;
 import com.keko.stellaria.packet.*;
 import com.keko.stellaria.renderHelpers.ZregosBite;
 import com.keko.stellaria.screenVfx.screenShake.ScreenShakeHandler;
@@ -10,8 +11,12 @@ import com.keko.stellaria.sounds.ModSounds;
 import com.keko.stellaria.stellarEvent.artha.ArthaDimensionHandler;
 import com.keko.stellaria.screenVfx.stellarHud.ArthaHudHandler;
 import com.keko.stellaria.stellarEvent.StellariaSkyboxTypes;
+import foundry.veil.api.client.render.VeilRenderSystem;
+import foundry.veil.api.quasar.particle.ParticleEmitter;
+import foundry.veil.api.quasar.particle.ParticleSystemManager;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.Minecraft;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.Vec3;
 
@@ -104,8 +109,7 @@ public class ModMessagesClient {
 
         ClientPlayNetworking.registerGlobalReceiver(BeginEndAnimS2C.ID, (payload, context) -> {
             context.client().execute(() -> {
-                System.out.println("TIME TO GO");
-                ArthaHudHandler.setTimeToGo(true);
+                ArthaHudHandler.setTimeToGo(true, payload.id());
             });
         });
 
@@ -113,6 +117,34 @@ public class ModMessagesClient {
         ClientPlayNetworking.registerGlobalReceiver(SendEnemySpawnTimerC2S.ID, (payload, context) -> {
             context.client().execute(() -> {
 
+            });
+        });
+
+        ClientPlayNetworking.registerGlobalReceiver(PhantomTPPartS2C.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                try {
+                    ResourceLocation id = Stellaria.id("void_phantom_tp");
+                    Vec3 position = new Vec3(payload.start().x, payload.start().y, payload.start().z);
+                    ParticleSystemManager manager = VeilRenderSystem.renderer().getParticleManager();
+                    ParticleEmitter emitter = manager.createEmitter(id);
+                    emitter.setPosition(position);
+                    manager.addParticleSystem(emitter);
+                } catch (Exception ignored) {
+                }
+            });
+        });
+
+        ClientPlayNetworking.registerGlobalReceiver(EiniTPPartS2C.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                try {
+                    ResourceLocation id = Stellaria.id("eini_tp");
+                    Vec3 position = new Vec3(payload.start().x, payload.start().y, payload.start().z);
+                    ParticleSystemManager manager = VeilRenderSystem.renderer().getParticleManager();
+                    ParticleEmitter emitter = manager.createEmitter(id);
+                    emitter.setPosition(position);
+                    manager.addParticleSystem(emitter);
+                } catch (Exception ignored) {
+                }
             });
         });
     }

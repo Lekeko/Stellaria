@@ -22,6 +22,12 @@ public class ModGroupItems {
                 entries.accept(ModBlocks.ZREGOS_MACE_BLOCK);
                 entries.accept(ModBlocks.VOID_STONE);
                 entries.accept(ModBlocks.BORDER_BREAKER);
+                entries.accept(ModBlocks.VOID_LIGHTSTONE);
+                entries.accept(ModBlocks.VOID_LAMP);
+
+                entries.accept(ModItems.VOID_GLAIVE);
+                entries.accept(ModItems.WHITEOUT_STAFF);
+                entries.accept(ModItems.TRICKSTERS_HAT);
             })
             .build();
 

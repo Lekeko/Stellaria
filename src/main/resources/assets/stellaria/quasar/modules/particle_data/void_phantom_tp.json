@@ -1,0 +1,64 @@
+{
+  "modules": [
+    {
+      "fullbright": true,
+      "module": "veil:lightmap"
+    },
+    {
+      "module": "rotation",
+      "x": "0",
+      "y": "0",
+      "z": "v.spin_rate = q.age < 1 ? math.random(20, 300) * (math.random(0, 1) < 0.5 ? -1 : 1) : v.spin_rate; return q.agePercent * v.spin_rate;"
+    },
+    {
+      "module": "color",
+      "gradient": {
+        "rgb_points": [
+          {
+            "percent": 0,
+            "color": "0xFFFFFF"
+          },
+          {
+            "percent": 1,
+            "color": "0xFFFFFF"
+          }
+        ],
+        "alpha_points": [
+          {
+            "percent": 0,
+            "alpha": 1
+          },
+          {
+            "percent": 1,
+            "alpha": 0
+          }
+        ]
+      },
+      "interpolant": "q.agePercent"
+    },
+    {
+      "vector_field": {
+        "noise": {
+          "rotation_type_3d": "None",
+          "domain_warp_type": "OpenSimplex2",
+          "cellular_distance_function": "EuclideanSq",
+          "cellular_return_type": "Distance",
+          "noise_type": "OpenSimplex2",
+          "octaves": 6,
+          "lacunarity": 5.36,
+          "gain": 7.65,
+          "frequency": 0.01,
+          "seed": 587466852,
+          "fractal_type": "DomainWarpIndependent"
+        },
+        "strength": 1.0
+      },
+      "strength": 1.0,
+      "module": "veil:vector_field"
+    }
+  ],
+  "sprite_data": {
+    "sprite": "stellaria:textures/particle/zregos_star_burst_normal.png"
+  },
+  "render_style": "veil:billboard"
+}

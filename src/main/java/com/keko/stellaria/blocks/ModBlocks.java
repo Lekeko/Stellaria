@@ -4,6 +4,7 @@ import com.keko.stellaria.Stellaria;
 import com.keko.stellaria.blocks.borderBreaker.BorderBreaker;
 import com.keko.stellaria.blocks.maceBlock.ZregosMaceBlock;
 import com.keko.stellaria.blocks.portal.DraconicCrystalBlock;
+import com.keko.stellaria.blocks.voidLamp.VoidLamp;
 import com.keko.stellaria.items.ModItems;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -44,6 +45,13 @@ public class ModBlocks {
     public static final Block VOID_LIGHTSTONE =  registerBlock(new Block(
             BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE)
     ), "void_lightstone", new Item.Properties());
+
+    public static final VoidLamp VOID_LAMP = (VoidLamp) registerBlock(new VoidLamp(
+            BlockBehaviour.Properties.of()
+                    .strength(3.0f, 10.0f)
+                    .lightLevel(state -> 12)
+                    .noOcclusion()
+    ), "void_lamp", new Item.Properties());
 
     private static Block registerBlock(Block block, String path, Item.Properties settings) {
         ModItems.registerItem(new BlockItem(block, settings), path);

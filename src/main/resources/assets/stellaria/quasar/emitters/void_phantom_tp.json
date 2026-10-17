@@ -1,0 +1,25 @@
+{
+  "count": 30,
+  "emitter_settings": {
+    "shape": [
+      {
+        "shape": "veil:sphere",
+        "dimensions": [
+          3.0,
+          3.0,
+          3.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "from_surface": true
+      }
+    ],
+    "particle_settings": "stellaria:void_phantom_tp"
+  },
+  "particle_data": "stellaria:void_phantom_tp",
+  "max_lifetime": 6,
+  "rate": 1
+}

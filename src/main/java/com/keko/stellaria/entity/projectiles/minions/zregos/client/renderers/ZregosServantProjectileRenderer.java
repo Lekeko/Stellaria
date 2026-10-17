@@ -30,10 +30,6 @@ import java.util.UUID;
 import static com.keko.stellaria.helper.MathHelpers.lerp;
 
 public class ZregosServantProjectileRenderer extends GeoEntityRenderer<ZregosServantProjectile> {
-    private final int STRIP_LENGTH = 200;
-    private final Map<UUID, ArrayList<Vec3>> entityPositions = new HashMap<>();
-
-    Trail trail = new Trail(200, animatable);
 
     public ZregosServantProjectileRenderer(EntityRendererProvider.Context context) {
         super(context, new ZregosServantProjectileModel());
@@ -46,8 +42,7 @@ public class ZregosServantProjectileRenderer extends GeoEntityRenderer<ZregosSer
         Color color1 = new Color(87, 255, 221, 255);
         Color color2 = new Color(195, 79, 255, 238);
 
-
-        RenderUtilHelper.renderTrail(entity, partialTick, poseStack, color1, color2, trail);
+        RenderUtilHelper.renderTrail(entity, partialTick, poseStack, color1, color2, entity.getTrail(), Vec3.ZERO, 1.0f, Easing.LINEAR);
     }
 
     @Override

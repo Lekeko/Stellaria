@@ -1,6 +1,7 @@
 package com.keko.stellaria.entity.projectiles.player.mage;
 
 import com.keko.stellaria.helper.SpaceHelpers;
+import com.keko.stellaria.helper.Trail;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
@@ -28,10 +29,13 @@ public class FuryProjectile extends AbstractArrow implements GeoEntity {
     private ArrayList<Entity> hitEntities = new ArrayList<>();
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
+    private final int STRIP_LENGTH = 20;
+    Trail trail;
+
     public FuryProjectile(EntityType<? extends AbstractArrow> entityType, Level level) {
         super(entityType, level);
         this.pickup = Pickup.DISALLOWED;
-
+        trail = new Trail(STRIP_LENGTH, this);
     }
 
     @Override
@@ -61,6 +65,10 @@ public class FuryProjectile extends AbstractArrow implements GeoEntity {
         return clientTick;
     }
 
+    public Trail getTrail() {
+        return trail;
+    }
+
     public void addClientTick(float clientTick) {
         this.clientTick += clientTick;
     }
@@ -71,7 +79,7 @@ public class FuryProjectile extends AbstractArrow implements GeoEntity {
         setNoGravity(true);
 
         if (level().isClientSide){
-
+            getTrail().update(1.0f);
         }else {
             if ( pierce <= 0 || tickCount > 20 * 6) {
                 discard();

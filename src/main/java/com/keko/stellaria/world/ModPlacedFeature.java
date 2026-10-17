@@ -16,12 +16,16 @@ import java.util.List;
 
 public class ModPlacedFeature {
     public static final ResourceKey<PlacedFeature> VOID_LIGHTSTONE_SPREAD_PLACED = registerKey("void_lightstone_spread_feature");
+    public static final ResourceKey<PlacedFeature> VOID_LAMP_LIGHTS_PLACED = registerKey("void_lamp_lights_feature");
 
     public static void boostrap(BootstrapContext<PlacedFeature> context){
         var configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
 
 
         register(context, VOID_LIGHTSTONE_SPREAD_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.VOID_LIGHTSTONE_SPREAD_KEY),
+                ModOrePlacement.modifiersWithCount(1, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(300))));
+
+        register(context, VOID_LAMP_LIGHTS_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.VOID_LAMP_LIGHTS_KEY),
                 ModOrePlacement.modifiersWithCount(1, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(300))));
     }
 

@@ -1,5 +1,6 @@
 package com.keko.stellaria.entity.projectiles.minions.zregos;
 
+import com.keko.stellaria.helper.Trail;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -17,10 +18,16 @@ public class ZregosServantProjectile extends AbstractArrow implements GeoEntity 
     private float clientTick = 0;
     private Player target = null;
     private boolean shouldFollow = true;
+    Trail trail = new Trail(200, this);
+
 
     public ZregosServantProjectile(EntityType<? extends AbstractArrow> entityType, Level level) {
         super(entityType, level);
         this.pickup = Pickup.DISALLOWED;
+    }
+
+    public Trail getTrail() {
+        return trail;
     }
 
     public void setTarget(Player target) {
@@ -56,6 +63,8 @@ public class ZregosServantProjectile extends AbstractArrow implements GeoEntity 
                     followPlayer();
                 if (tickCount >  28) shouldFollow = false;
             }
+        }else {
+            getTrail().update(1.0f);
         }
     }
 

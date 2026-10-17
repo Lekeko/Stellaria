@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "stellaria:item/whiteout_staff_inv"
+  },
+  "gui_light": "front"
+}
