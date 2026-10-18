@@ -137,6 +137,7 @@ public class TntBunny extends AbstractArrow implements GeoEntity {
 
             getOwner().addDeltaMovement(dirNorm.scale(1 / speed * amp));
             getOwner().hurtMarked = true;
+            getOwner().fallDistance = 0.0f;
         }
     }
 

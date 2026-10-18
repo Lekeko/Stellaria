@@ -37,10 +37,12 @@ public class TntBunnyRenderer extends GeoEntityRenderer<TntBunny> {
 
     @Override
     protected void applyRotations(TntBunny animatable, PoseStack poseStack, float ageInTicks, float rotationYaw, float partialTick, float nativeScale) {
-        super.applyRotations(animatable, poseStack, ageInTicks, rotationYaw, partialTick, nativeScale);
-        poseStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTick, animatable.yRotO, animatable.getYRot())));
-        poseStack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTick, animatable.xRotO, animatable.getXRot()) + 0.0f));
+        Vec3 dir = animatable.getDeltaMovement().normalize();
+        float yaw = (float) Math.toDegrees(Math.atan2(-dir.x, -dir.z));
+        float pitch = (float) Math.toDegrees(Math.asin(Mth.clamp(dir.y, -1.0, 1.0)));
 
+        poseStack.mulPose(Axis.YP.rotationDegrees(yaw));
+        poseStack.mulPose(Axis.XP.rotationDegrees(pitch));
     }
 
     @Override

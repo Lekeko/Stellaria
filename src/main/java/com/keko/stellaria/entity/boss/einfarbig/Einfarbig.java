@@ -533,6 +533,12 @@ public class Einfarbig extends Monster implements GeoEntity {
 
     }
 
+    @Override
+    public void onClientRemoval() {
+        removeLight();
+        super.onClientRemoval();
+    }
+
     private void changePhase(){
         for (ServerPlayer player : level().getServer().getPlayerList().getPlayers())
             player.playNotifySound(ModSounds.EINI_PHASE, SoundSource.MASTER, 1.0f, 1.0f);
@@ -597,9 +603,16 @@ public class Einfarbig extends Monster implements GeoEntity {
     }
 
     public void removeLight() {
-        if (handle != null) {
+
+        if (handle != null){
             handle.free();
             handle = null;
+            directionalLightData = null;
+        }
+        if (handlePointLight != null){
+            handlePointLight.free();
+            pointLightData = null;
+            handlePointLight = null;
         }
     }
 
