@@ -3,6 +3,7 @@ package com.keko.stellaria;
 import com.keko.stellaria.blocks.voidLamp.VoidLampEntity;
 import com.keko.stellaria.entity.ModEntitiesRenderer;
 import com.keko.stellaria.entity.boss.einfarbig.Einfarbig;
+import com.keko.stellaria.entity.boss.einfarbig.EinfarbigStatue;
 import com.keko.stellaria.entity.boss.minions.einfarbig.Messier;
 import com.keko.stellaria.helper.SpaceHelpers;
 import com.keko.stellaria.keyBinds.KeyBindings;
@@ -57,10 +58,14 @@ public class StellariaClient implements ClientModInitializer {
 
         ClientWorldEvents.AFTER_CLIENT_WORLD_CHANGE.register((minecraft, clientLevel) -> {
             VoidLampEntity.clearAllLights();
+            Einfarbig.clearAllLights();
+            EinfarbigStatue.clearAllLights();
         });
 
         ClientPlayConnectionEvents.DISCONNECT.register((clientPacketListener, minecraft) -> {
             VoidLampEntity.clearAllLights();
+            Einfarbig.clearAllLights();
+            EinfarbigStatue.clearAllLights();
         });
 
         ClientTickEvents.END_CLIENT_TICK.register(minecraft -> {

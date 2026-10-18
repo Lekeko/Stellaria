@@ -1,6 +1,7 @@
 package com.keko.stellaria.entity.boss.einfarbig;
 
 import com.keko.stellaria.blocks.ModBlocks;
+import com.keko.stellaria.blocks.voidLamp.VoidLampEntity;
 import com.keko.stellaria.entity.ModEntities;
 import com.keko.stellaria.entity.ModProjectiles;
 import com.keko.stellaria.entity.projectiles.boss.einfarbig.BunnyHat;
@@ -46,9 +47,12 @@ import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Einfarbig extends Monster implements GeoEntity {
-    private DirectionalLightData directionalLightData;
-    LightRenderHandle<DirectionalLightData> handle;
+
 
     private int changeTargetTimer = 0;
     private final int MAX_TARGET_TIEMR = 15 * 20;
@@ -69,8 +73,7 @@ public class Einfarbig extends Monster implements GeoEntity {
     private int phaseTimer = 60;
     private static EntityDataAccessor<Boolean> IS_CHANGIN =
             SynchedEntityData.defineId(Einfarbig.class, EntityDataSerializers.BOOLEAN);
-    private PointLightData pointLightData;
-    LightRenderHandle<PointLightData> handlePointLight;
+
     private float phaseLightBISR = 1.0f;
 
     //attack vars
@@ -112,8 +115,17 @@ public class Einfarbig extends Monster implements GeoEntity {
 
     private double orbitAngle;
     private double speed = 1.0d;
-
+    //ASDASDASDA
     private final ServerBossEvent bossBar;
+
+    private PointLightData pointLightData;
+    LightRenderHandle<PointLightData> handlePointLight;
+    private DirectionalLightData directionalLightData;
+    LightRenderHandle<DirectionalLightData> handle;
+
+    private static final Set<Einfarbig> ACTIVE_POINT = new HashSet<>();
+    private static final Set<Einfarbig> ACTIVE_DIRECTIONAL = new HashSet<>();
+
 
     public Einfarbig(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
@@ -476,6 +488,7 @@ public class Einfarbig extends Monster implements GeoEntity {
                         .setBrightness(phaseLightBISR)
                         .setInscatteringStrength(phaseLightBISR);
                 handlePointLight = VeilRenderSystem.renderer().getLightRenderer().addLight(pointLightData);
+                ACTIVE_POINT.add(this);
             } else {
                 setPhaseLightBISR(Minecraft.getInstance().getTimer().getRealtimeDeltaTicks() * 5.0f);
                 handlePointLight.getLightData()
@@ -602,18 +615,18 @@ public class Einfarbig extends Monster implements GeoEntity {
         this.directionalLightData = directionalLightData;
     }
 
-    public void removeLight() {
-
-        if (handle != null){
+    public void removeLight(){
+        if (handle != null) {
             handle.free();
             handle = null;
-            directionalLightData = null;
         }
-        if (handlePointLight != null){
+        ACTIVE_DIRECTIONAL.remove(this);
+
+        if (handlePointLight != null) {
             handlePointLight.free();
-            pointLightData = null;
             handlePointLight = null;
         }
+        ACTIVE_POINT.remove(this);
     }
 
     public void addLight() {
@@ -623,7 +636,16 @@ public class Einfarbig extends Monster implements GeoEntity {
                     .setColor(255/255.0f, 196/255.0f, 248/255.0f)
             );
             handle = VeilRenderSystem.renderer().getLightRenderer().addLight(directionalLightData);
+            ACTIVE_DIRECTIONAL.add(this);
         }
+    }
+
+    public static void clearAllLights() {
+        for (Einfarbig eini : new ArrayList<>(ACTIVE_DIRECTIONAL)) {
+            eini.removeLight();
+        }
+        ACTIVE_DIRECTIONAL.clear();
+        ACTIVE_POINT.clear();
     }
 
     @Override

@@ -57,10 +57,12 @@ public class EinfarbigStatueRenderer extends GeoEntityRenderer<EinfarbigStatue> 
 
     @Override
     public boolean shouldRender(EinfarbigStatue entity, Frustum frustum, double d, double e, double f) {
-        if(Vec3.atCenterOf(entity.getOnPos()).closerThan(new Vec3(d,e,f), Minecraft.getInstance().options.getEffectiveRenderDistance() * 16)){
-            entity.addLight();
-        }else {
-            entity.removeLight();
+        if (Minecraft.getInstance().player != null){
+            if (!Minecraft.getInstance().player.isDeadOrDying() && Vec3.atCenterOf(entity.getOnPos()).closerThan(new Vec3(d, e, f), Minecraft.getInstance().options.getEffectiveRenderDistance() * 16)) {
+                entity.addLight();
+            } else {
+                entity.removeLight();
+            }
         }
 
         return true;

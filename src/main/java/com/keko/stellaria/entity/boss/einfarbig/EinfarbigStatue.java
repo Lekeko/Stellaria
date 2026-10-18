@@ -1,5 +1,6 @@
 package com.keko.stellaria.entity.boss.einfarbig;
 
+import com.keko.stellaria.blocks.voidLamp.VoidLampEntity;
 import com.keko.stellaria.entity.ModEntities;
 import com.keko.stellaria.entity.boss.minions.einfarbig.VoidDealer;
 import com.keko.stellaria.particles.ModParticles;
@@ -28,15 +29,20 @@ import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 public class EinfarbigStatue extends Entity implements GeoEntity {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     private AreaLightData areaLightData;
     LightRenderHandle<AreaLightData> handle;
+    private static final Set<EinfarbigStatue> ACTIVE_AREA = new HashSet<>();
+
     public EinfarbigStatue(EntityType<?> entityType, Level level) {
         super(entityType, level);
     }
-
 
 
 
@@ -88,11 +94,11 @@ public class EinfarbigStatue extends Entity implements GeoEntity {
     }
 
     public void removeLight(){
-
         if (handle != null) {
             handle.free();
             handle = null;
         }
+        ACTIVE_AREA.remove(this);
     }
 
     public void addLight(){
@@ -111,7 +117,15 @@ public class EinfarbigStatue extends Entity implements GeoEntity {
 
 
             handle = VeilRenderSystem.renderer().getLightRenderer().addLight(getAreaLightData());
+            ACTIVE_AREA.add(this);
         }
+    }
+
+    public static void clearAllLights() {
+        for (EinfarbigStatue statue : new ArrayList<>(ACTIVE_AREA)) {
+            statue.removeLight();
+        }
+        ACTIVE_AREA.clear();
     }
 
     public void setAreaLightData(AreaLightData areaLightData) {
